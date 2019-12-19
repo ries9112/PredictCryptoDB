@@ -1,0 +1,10 @@
+# Useful Tables
+
+
+
+
+
+
+
+
+(if there are any tables that start with *AYX* please ignore these tables as they are artifacts of temporary tables made through Alteryx that were supposed to be deleted)

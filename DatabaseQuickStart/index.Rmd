@@ -1,7 +1,7 @@
 --- 
 title: "Predict Crypto Database Quick Start Guide"
-author: "Riccardo Esclapon - riccardo.esclapon@colorado.edu"
-date: "`r Sys.Date()`"
+# author: "Riccardo Esclapon - riccardo.esclapon@colorado.edu"
+# date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
@@ -18,7 +18,15 @@ description: "This is a quick start guide for the Predict Crypto database which 
 
 # Introduction
 
+![](images/PredictCryptoLogo.PNG)
 
+This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data. Everything you need to know will be outlined in this document and you can use the sidebar on the left to review the following sections:
 
-This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data as you would like.
+2. [Accessing the *Metabase* environment that will allow you to interact with the database](#interacting-with-the-db), which is hosted on the website [PredictCryptoDB.com](https://predictcryptodb.com)
+
+3. [A review of some of the more useful/interesting tables you can find within the database and an overview of the best places to get started.](#useful-tables) 
+
+4. [An overview of the documentation that is available through the Metabase environment and how to use it to answer questions you may have around where the data is sourced from as well as a complete data dictionary for every table.](#documentation-usage)
+
+5. [Some more tips and tricks about interacting with the Metabase environment.](#additional-tips)
 
