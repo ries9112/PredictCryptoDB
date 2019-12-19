@@ -19,9 +19,9 @@ First, let me clarify on what I mean by *Metabase* and how this all works.
 
 1. [Metabase](https://www.metabase.com/) is the name of the open source software that we are using to interact with the database.
 
-2. Using the [docker container available to download on Metabase's website](https://hub.docker.com/r/metabase/metabase/), I created a server-type environment in AWS that acts as an interface with Metabase.
+2. Using the [docker container available to download on Metabase's website](https://hub.docker.com/r/metabase/metabase/), I stood up a server-type environment in AWS that hosts the Metabase instance that is connected to the database.
 
-3. The AWS instance that runs the Metabase environment can be connected to through the https secured website [predictcryptodb.com](https://predictcryptodb.com) using the set of credentials that you created after clicking on the invitation from the e-mail you received. If you need an invite to create a set of credentials, e-mail me at riccardo.esclapon@colorado.edu.
+3. The AWS environment running the Metabase instance can be connected to by opening your web browser and navigating to the https secured website [predictcryptodb.com](https://predictcryptodb.com). From here, you will use the set of credentials that you created after clicking on the invitation from the e-mail you received. If you need an invite to create a set of credentials, e-mail me at riccardo.esclapon@colorado.edu.
 
 
 ## Logging In

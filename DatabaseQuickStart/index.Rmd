@@ -18,17 +18,17 @@ description: "This is a quick start guide for the Predict Crypto database which 
 
 # Overview
 
-![](images/PredictCryptoLogo.PNG)
+[![](images/PredictCryptoLogo.PNG)](https://predictcryptodb.com)
 
-This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data. Everything you need to know will be outlined in this document and you can use the sidebar on the left to review the following sections:
+This is a quick start guide for the [Predict Crypto DataBase](https://predictcryptodb.com) which should provide the support you need to interact with the database and pull data. Everything you need to know will be outlined in this document and you can use the sidebar on the left to review the following sections:
 
-1. [Overview.](#overview) This section.
+1. [Overview-](#overview) This section.
 
-2. [Accessing the *Metabase* environment that will allow you to interact with the database](#interacting-with-the-db), which is hosted on the website [PredictCryptoDB.com](https://predictcryptodb.com)
+2. [Interacting with the DB-](#interacting-with-the-db) Instructions around accessing the ***Metabase*** environment that will allow you to interact with the database, which is hosted on the website [PredictCryptoDB.com](https://predictcryptodb.com)
 
-3. [A review of some of the more useful/interesting tables you can find within the database and an overview of the best places to get started.](#useful-tables) 
+3. [Useful Tables-](#useful-tables) A review of some of the more useful/interesting tables you can find within the database and an overview of the best places to get started.
 
-4. [An overview of the documentation that is available through the Metabase environment and how to use it to answer questions you may have around where the data is sourced from as well as a complete data dictionary for every table.](#documentation-usage)
+4. [Documentation Usage-](#documentation-usage) An overview of the documentation that is available through the Metabase environment and how to use it to answer questions you may have around where the data is sourced from as well as a complete data dictionary for every table.
 
-5. [Some more tips and tricks about interacting with the Metabase environment.](#additional-tips)
+5. [Additional Tips-](#additional-tips) Some additional notes around using the environment to its full potential. This section goes over things like [pulling the most recent data](#pulling-most-recent-data), [creating dashboards](#creating-dashboards), [embedding anything you create as an iframe within a website or blog post](#embedding-anything-created-on-metabase), [creating e-mail triggers](#creating-e-mail-triggers) and [using a Python package to execute trades](#using-the-shrimpy-python-library).
 

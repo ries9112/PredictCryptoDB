@@ -25,8 +25,9 @@ Here, you will see two different options:
 
 ![I would recommend starting here because this was the first/original database and will have more historical data compared to ScrapeStorm, which I got up and running much later](images/OctoparseClick.png)
 
-Now you should see the tables that are contained within the `Octoparse` schema
+Now you should see the tables that are contained within the `Octoparse` schema. By hovering over each table, you will see three options appear, which will be better explained in the [next section about *Documentation Usage*](#documentation-usage)
 
+![](images/OctoparseTableOptionsHover.png)
 
 
 ## Data Exploration
@@ -41,7 +42,7 @@ Now you should see the tables that are contained within the `Octoparse` schema
 
 ## Some other useful tables
 
-- `**Bitgur Performance**`
+- **`Bitgur Performance`**
 
     + This table is very similar to the `Bitgur` table we reviewed at the end of the last section, but this one includes some fields that summarize the short-term performance of the cryptocurrency in the short-term relative to when the data was collected:
     
@@ -52,7 +53,19 @@ Now you should see the tables that are contained within the `Octoparse` schema
     + Row count as of 12/19/2019:
     
     
-- `***ScrapeStorm.
+- ***`ScrapeStorm.ShrimpyPrices`***
+
+    + When using data from a table like the `Bitgur Performance` table just described, that data is aggregared at a global level. Meaning, the Bitgur website connects to a certain number of exchanges, and calculates things like the overall Market Capitalization ($), the 24h volume, etc. When it comes to the price, the website will average things across exchanges to get to the current price, which makes sense, but in my experience this is not as precise as it needs to be in order to programmatically trade on the cryptocurrency markets.
+    
+    + Therefore, a better approach is to collect the prices directly through the individual exchanges. Because I setup my trading system to work through a service called **Shrimpy**, I have been collecting prices for each exchange as reported through the Shrimpy website. This for example would be the page for the KuCoin exchange prices:
+    
+    ![](images/ShrimpyKucoin.png)
+    
+    
+
+- ***`ScrapesStorm.ShrimpyPricesBTC`***
+
+
     
 
 
