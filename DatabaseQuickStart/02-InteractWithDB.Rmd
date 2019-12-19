@@ -1,4 +1,4 @@
-# Interacting with the db
+# Interacting with the DB
 
 First off, why the heck is there a website? If there's a database that lives somewhere in the cloud why wouldn't you access it through a SQL editor like SSMS or MySQL? Let's start with the benefits of having this environment readily available to access through a website before jumping into how to start interacting with the database.
 
@@ -24,7 +24,7 @@ First, let me clarify on what I mean by *Metabase* and how this all works.
 3. The AWS instance that runs the Metabase environment can be connected to through the https secured website [predictcryptodb.com](https://predictcryptodb.com) using the set of credentials that you created after clicking on the invitation from the e-mail you received. If you need an invite to create a set of credentials, e-mail me at riccardo.esclapon@colorado.edu.
 
 
-## Usage Guide
+## Logging In
 
 1. To get started, the first thing you will want to do every time is go to the URL [predictcryptodb.com](https://predictcryptodb.com). You should see a login page:
 
@@ -45,3 +45,8 @@ First, let me clarify on what I mean by *Metabase* and how this all works.
     ![](images/MetabaseDashboard.png)
 
 In the next section we will talk about some good tables to get started on, and getting more comfortable navigating the layout of the website.
+
+
+
+
+

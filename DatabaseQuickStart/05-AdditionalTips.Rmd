@@ -1,1 +1,25 @@
 # Additional Tips
+
+## Pulling Most Recent Data
+
+Let's say you went ahead and trained a predictive model using the data found in the database and now you want to test making some *semi-live* predictions, how would you go about pulling the latest data to make predictions on?
+
+
+## Creating dashboards
+
+
+## Embedding anything created on Metabase
+
+
+## Creating e-mail triggers
+
+
+### Pulses
+
+
+## Using the Shrimpy-Python Library
+
+This section is a bit more *expert level* and I don't really expect anyone to go down this route, but I figured it was worth having a small section on using the Shrimpy software for trading cryptocurrencies by using their Python package. This is a particularly good way to execute trades on the cryptocurrency markets because rather than having to connect to and manage each API individually, you can connect up to 16 exchanges to your Shrimpy account and programmatically trade on every one of them using the same set of functions in Python.
+
+
+

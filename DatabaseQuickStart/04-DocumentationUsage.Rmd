@@ -6,3 +6,4 @@ Everything you have visibility to within the Metabase environment is documented.
 
 
 
+(could really use a section on explaining the way pkDummy, pkey work and how they follow two different time zones, show Alteryx trick to deal with the trickiness of UTC not having daylight savings and our local times having it)
