@@ -25,12 +25,36 @@ Here, you will see two different options:
 
 ![I would recommend starting here because this was the first/original database and will have more historical data compared to ScrapeStorm, which I got up and running much later](images/OctoparseClick.png)
 
-Now you should see the tables that are contained within the `Octoparse` schema. By hovering over each table, you will see three options appear, which will be better explained in the [next section about *Documentation Usage*](#documentation-usage)
+Now you should see the tables that are contained within the `Octoparse` schema. By hovering over each table, you will see three options appear, which will be better explained in the [next section about *Documentation Usage*](#documentation-usage). In the screenshot the mouse is hovering over the `i` symbol for the Bitgur table:
 
 ![](images/OctoparseTableOptionsHover.png)
 
+For now, let's go ahead and click on the name of the table `Bitgur`:
+
+![](images/BitgurTableSelect.png)
+
+After clicking on the table name, you should see some example data show up. This shows the first 2,000 rows of data found in the table:
+
+![](images/BitgurPreview.png)
+
+In the next section we will walk through some of the functionality associated with the things circled in red in the screenshot above.
 
 ## Data Exploration
+
+- The first thing I want to point out, is that you can click on each field to open a menu with an assortment of options based on the data type. For example, if we click on the Price field, these are the options we are given:
+
+    ![](images/PriceFieldOptions.png)
+
+    + The Date field is a different data types and offers different options:
+    
+        ![](images/DateDescendingOption.png)
+    
+        + We can easily modify the data displayed to show the latest data instead of the oldest data:
+        
+            ![](images/DateDescendingOutcome.png)
+        
+            + If the `Bitgur` table is not being very responsive, try using the `BitgurPerformance` table instead, which should load faster (but has less historical data, this table is described in [a section below](#some-other-useful-tables))
+
 
 
 ### Exports
@@ -42,7 +66,7 @@ Now you should see the tables that are contained within the `Octoparse` schema. 
 
 ## Some other useful tables
 
-- **`Bitgur Performance`**
+- **`BitgurPerformance`**
 
     + This table is very similar to the `Bitgur` table we reviewed at the end of the last section, but this one includes some fields that summarize the short-term performance of the cryptocurrency in the short-term relative to when the data was collected:
     
@@ -53,9 +77,9 @@ Now you should see the tables that are contained within the `Octoparse` schema. 
     + Row count as of 12/19/2019:
     
     
-- ***`ScrapeStorm.ShrimpyPrices`***
+- **`ScrapeStorm.ShrimpyPrices`**
 
-    + When using data from a table like the `Bitgur Performance` table just described, that data is aggregared at a global level. Meaning, the Bitgur website connects to a certain number of exchanges, and calculates things like the overall Market Capitalization ($), the 24h volume, etc. When it comes to the price, the website will average things across exchanges to get to the current price, which makes sense, but in my experience this is not as precise as it needs to be in order to programmatically trade on the cryptocurrency markets.
+    + When using data from a table like the `BitgurPerformance` table just described, that data is aggregared at a global level. Meaning, the Bitgur website connects to a certain number of exchanges, and calculates things like the overall Market Capitalization ($), the 24h volume, etc. When it comes to the price, the website will average things across exchanges to get to the current price, which makes sense, but in my experience this is not as precise as it needs to be in order to programmatically trade on the cryptocurrency markets.
     
     + Therefore, a better approach is to collect the prices directly through the individual exchanges. Because I setup my trading system to work through a service called **Shrimpy**, I have been collecting prices for each exchange as reported through the Shrimpy website. This for example would be the page for the KuCoin exchange prices:
     
@@ -63,7 +87,7 @@ Now you should see the tables that are contained within the `Octoparse` schema. 
     
     
 
-- ***`ScrapesStorm.ShrimpyPricesBTC`***
+- **`ScrapesStorm.ShrimpyPricesBTC`**
 
 
     
