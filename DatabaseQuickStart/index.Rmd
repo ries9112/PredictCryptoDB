@@ -1,7 +1,7 @@
 --- 
 title: "Predict Crypto Database Quick Start Guide"
-# author: "Riccardo Esclapon - riccardo.esclapon@colorado.edu"
-# date: "`r Sys.Date()`"
+author: "Ricky Esclapon - riccardo.esclapon@colorado.edu"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
@@ -28,7 +28,9 @@ This is a quick start guide for the [Predict Crypto DataBase](https://predictcry
 
 3. [Useful Tables-](#useful-tables) A review of some of the more useful/interesting tables you can find within the database and an overview of the best places to get started.
 
-4. [Documentation Usage-](#documentation-usage) An overview of the documentation that is available through the Metabase environment and how to use it to answer questions you may have around where the data is sourced from as well as a complete data dictionary for every table.
+4. [Usage Guide-](#usage-guide) This guide explores some of the functionality found within the website/Metabase environment.
 
-5. [Additional Tips-](#additional-tips) Some additional notes around using the environment to its full potential. This section goes over things like [pulling the most recent data](#pulling-most-recent-data), [creating dashboards](#creating-dashboards), [embedding anything you create as an iframe within a website or blog post](#embedding-anything-created-on-metabase), [creating e-mail triggers](#creating-e-mail-triggers) and [using a Python package to execute trades](#using-the-shrimpy-python-library).
+5. [Documentation Usage-](#documentation-usage) An overview of the documentation that is available through the Metabase environment and how to use it to answer questions you may have around where the data is sourced from as well as a complete data dictionary for every table.
+
+6. [Additional Tips-](#additional-tips) Some additional notes around using the environment to its full potential. This section goes over things like [pulling the most recent data](#pulling-most-recent-data), [creating dashboards](#creating-dashboards), [embedding anything you create as an iframe within a website or blog post](#embedding-anything-created-on-metabase), [creating e-mail triggers](#creating-e-mail-triggers) and [using a Python package to execute trades](#using-the-shrimpy-python-library).
 

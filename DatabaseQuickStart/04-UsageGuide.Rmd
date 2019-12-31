@@ -1,0 +1,106 @@
+# Usage Guide
+
+
+
+
+## Pulling Most Recent Data
+
+Let's say you went ahead and trained a predictive model using the data found in the database and now you want to test making some *semi-live* predictions, how would you go about pulling the latest data to make predictions on?
+
+- pkDummy
+
+- pkey
+
+Make a note that can't do this between different schemas because the Octoparse one is in UTC and the ScrapeStorm one in local time. Only real effective way I found do to that is through Alteryx tools.
+
+
+## Data Exploration
+
+Let's explore some of the functionality found in Metabase using the `Bitgur` table results page we got to at the end of the previous section.
+
+- The first thing I want to point out, is that you can click on each field to open a menu with an assortment of options based on the data type. For example, if we click on the **Price** field, these are the options we are given:
+
+    ![](images/PriceFieldOptions.png)
+
+    + The Date field is a different data types and offers different options. For example we could sort the data by the **Date** field **Descending**:
+    
+        ![](images/DateDescendingOption.png)
+    
+        + Which would return the first 2,000 rows again but this time sorted showing the largest values first (meaning the latest date):
+        
+            ![If the `Bitgur` table is not being very responsive, try using the `BitgurPerformance` table instead, which should load faster (but has less historical data, this table is described in [a section below](#some-other-useful-tables))](images/DateDescendingOutcome.png)
+
+- Next, let's click on the purple `Filter` button in the top right of the page:
+
+    ![](images/FilterButton.png)
+    
+    - Now you should see the following sidebar pop-up:
+    
+        ![Notice how the icons next to the field names correspond to their data types](images/FilterSidebar.png)
+    
+        + Let's do a quick example filtering based on the **DateTime** field:
+        
+            ![](images/DateTimeClick.png)
+        
+            + Let's add a filter to only select data where the **DateTime** field is from the last 7 days:
+            
+            ![*please be patient as this loads or do the same with a different table that contains less historical data*](images/DateTimeOptions.png)
+            
+         
+- Now that we have filtered the data down to the subset we are interested in, let's adjust the look of the table using the `Settings` option in the bottom left:
+
+    ![](images/BitgurTableSettings.png)
+    
+    + After clicking on the `Settings` button, you should see a sidebar show up on the left. First, let's edit the settings for the **Price** field:
+        
+        ![](images/BitgurPriceSettings.png)
+            
+        + And let's set the currency to be displayed with every cell instead of in parenthesis in the column name:
+            
+            ![](images/PriceShowCurrency.png)
+                
+            + Now the currency field will look like this for each row:
+            
+            ![](images/BitgurPriceModified.png)
+                
+    + Let's also do a quick edit to the **Volatility** field settings:
+        
+        ![](images/BitgurVolatilitySettings.png)
+        
+        + Enable the setting to `Show a mini bar chart`:
+            
+        ![](images/ShowMiniBarChart.png)
+                
+        + Now each row should have a bar that is filled based on the current value compared to the minimum and maximum values for that field for the current subset of the data:
+                
+            ![](images/VolatilityMiniBarChart.png)
+                
+            + If we sort the data by **Volatility** in *descending* order, we can see the row that sets the bar for the maximum for the rest of the rows:
+                    
+            ![](images/MaximumVolatility.png)
+                        
+         + Now let's also add some conditional formatting to the **Volatility** field, which will color each row when a certain criteria is met. Go back to the `Settings` page of the table, and this time click on `Conditional Formatting`:
+         
+             ![](images/ConditionalFormattingSelect.png)
+             
+             + Now we can create a rule to highlight rows with a value for **Volatility > 50**:
+             
+             ![](images/ConditionalFormattingRule.png)
+             
+             + The table's rows should now be highlighted when the criteria is met:
+             
+             ![](images/ConditionalFormattingOutput.png)
+
+
+
+### Exporting Data
+
+(make a note about confidentiality of the data)
+
+
+
+## Answer Questions
+
+
+## Creating dashboards
+

@@ -32,15 +32,15 @@ First, let me clarify on what I mean by *Metabase* and how this all works.
     
     + If you are having issues accessing the website, try spelling the url including [***https://***predictcryptodb.com](https://predictcryptodb.com). 
 
-2. Before you can login, you need to configure your account through the e-mail you should have received. If you did not receive the e-mail, check your spam folder first:
+    + Before you can login, you need to configure your account through the e-mail you should have received. If you did not receive the e-mail, check your spam folder first:
 
-    ![*If you need the e-mail to setup your login, e-mail me*](images/MetabaseInvite.jpg)
+        ![*If you need the e-mail to setup your login, e-mail me*](images/MetabaseInvite.jpg)
     
-    + Configure your password and you will be able to use your e-mail and password to login in the future:
+        + Configure your password and you will be able to use your e-mail and password to login in the future:
     
-    ![](images/MetabaseSetPassword.png)
+        ![](images/MetabaseSetPassword.png)
 
-3. Once you have logged in, you should see a page that looks like this:
+2. Once you have logged in, you should see a page that looks like this:
 
     ![](images/MetabaseDashboard.png)
 

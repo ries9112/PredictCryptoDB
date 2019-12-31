@@ -1,5 +1,35 @@
 # Useful Tables
 
+```{r dbConnect, echo=F, warning=F}
+library(DBI)
+library(RMySQL)
+library(data.table)
+
+############# SQL CONNECTION ###############
+getSqlConnection <- function(){
+  con <-
+    dbConnect(
+      RMySQL::MySQL(),
+      username = Sys.getenv('user'),
+      password = Sys.getenv('pswd'),
+      host = Sys.getenv('ipAddress'),
+      dbname = 'Octoparse'
+    )
+  return(con)
+}
+
+database_connection <- getSqlConnection()
+tables_list <- dbListTables(database_connection)
+
+query <- 'SELECT table_schema "DB name", sum( data_length + index_length ) / 1024 / 1024 "Size in MB", curdate() as Today 
+FROM information_schema.TABLES GROUP BY table_schema 
+ORDER BY `Size in MB` desc limit 2'
+
+tables_summary <- dbFetch(dbSendQuery(database_connection, query))
+```
+
+CONNECTED TO DB. CREATE WEEKLY SUMMARIES OF DATA FLOWING IN BY DATE, AND SHOW EXAMPLE OF LATEST DATA COLLECTED!!
+
 ## Browse Data
 
 Let's start by clicking on the `Browse Data` tab in the top right of the Metabase environment:
@@ -21,7 +51,13 @@ Here, you will see two different options:
     
     + The web scrapers that are run through ScrapeStorm run on a local machine on my end. I have a computer in the cloud that runs 24/7 but even after upgrading the hardware on it ScrapeStorm kept crashing, so this currently runs on my powerful desktop computer that is always on at home. When these run, the data flows in almost immediately, meaning if it's 4:05PM and you pulled the latest hour of data (which would be equivalent to the `max(***pkDummy***)`, more to come on that later on)
 
-**Let's click on the one that says `Octoparse` first:**
+- Here is the size of both the `Octoparse` database and the `ScrapeStorm` db as of the last time this document was refreshed (updated daily):
+```{r showTableSummary, echo=F, warning=F}
+data.table(tables_summary)
+```
+
+
+**Back in MetaBase, let's click on the option that says `Octoparse`:**
 
 ![I would recommend starting here because this was the first/original database and will have more historical data compared to ScrapeStorm, which I got up and running much later](images/OctoparseClick.png)
 
@@ -37,31 +73,7 @@ After clicking on the table name, you should see some example data show up. This
 
 ![](images/BitgurPreview.png)
 
-In the next section we will walk through some of the functionality associated with the things circled in red in the screenshot above.
-
-## Data Exploration
-
-- The first thing I want to point out, is that you can click on each field to open a menu with an assortment of options based on the data type. For example, if we click on the Price field, these are the options we are given:
-
-    ![](images/PriceFieldOptions.png)
-
-    + The Date field is a different data types and offers different options:
-    
-        ![](images/DateDescendingOption.png)
-    
-        + We can easily modify the data displayed to show the latest data instead of the oldest data:
-        
-            ![](images/DateDescendingOutcome.png)
-        
-            + If the `Bitgur` table is not being very responsive, try using the `BitgurPerformance` table instead, which should load faster (but has less historical data, this table is described in [a section below](#some-other-useful-tables))
-
-
-
-### Exports
-
-(make note about confidentiality)
-
-
+In the next section we will walk through some of the functionality associated with the things circled in red in the screenshot above using the Bitgur table as an example.
 
 
 ## Some other useful tables
@@ -85,17 +97,7 @@ In the next section we will walk through some of the functionality associated wi
     
     ![](images/ShrimpyKucoin.png)
     
-    
 
 - **`ScrapesStorm.ShrimpyPricesBTC`**
 
 
-    
-
-
-
-
-
-
-
-(if there are any tables that start with *AYX* please ignore these tables as they are artifacts of temporary tables made through Alteryx that were supposed to be deleted) - issue resolved?
