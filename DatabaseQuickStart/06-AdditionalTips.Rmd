@@ -24,3 +24,8 @@ This section is a bit more *expert level* and I don't really expect anyone to go
 
 
 
+
+
+```{r disconnectDB, echo=F}
+dbDisconnect(database_connection)
+```

@@ -4,6 +4,9 @@
 library(DBI)
 library(RMySQL)
 library(data.table)
+library(knitr)
+library(rmarkdown)
+library(DT)
 
 ############# SQL CONNECTION ###############
 getSqlConnection <- function(){
@@ -28,8 +31,6 @@ ORDER BY `Size in MB` desc limit 2'
 tables_summary <- dbFetch(dbSendQuery(database_connection, query))
 ```
 
-CONNECTED TO DB. CREATE WEEKLY SUMMARIES OF DATA FLOWING IN BY DATE, AND SHOW EXAMPLE OF LATEST DATA COLLECTED!!
-
 ## Browse Data
 
 Let's start by clicking on the `Browse Data` tab in the top right of the Metabase environment:
@@ -51,9 +52,9 @@ Here, you will see two different options:
     
     + The web scrapers that are run through ScrapeStorm run on a local machine on my end. I have a computer in the cloud that runs 24/7 but even after upgrading the hardware on it ScrapeStorm kept crashing, so this currently runs on my powerful desktop computer that is always on at home. When these run, the data flows in almost immediately, meaning if it's 4:05PM and you pulled the latest hour of data (which would be equivalent to the `max(***pkDummy***)`, more to come on that later on)
 
-- Here is the size of both the `Octoparse` database and the `ScrapeStorm` db as of the last time this document was refreshed (updated daily):
+- Here is the size in MB of both the `Octoparse` database and the `ScrapeStorm` db as of the last time this document was refreshed (updated daily):
 ```{r showTableSummary, echo=F, warning=F}
-data.table(tables_summary)
+datatable(tables_summary)
 ```
 
 
@@ -76,28 +77,85 @@ After clicking on the table name, you should see some example data show up. This
 In the next section we will walk through some of the functionality associated with the things circled in red in the screenshot above using the Bitgur table as an example.
 
 
-## Some other useful tables
+## Useful tables
+For the previews below, keep an eye out for a button to show more columns:
+![](images/MoreColumns.png)
 
-- **`BitgurPerformance`**
+### Tables in `Octoparse` db
 
-    + This table is very similar to the `Bitgur` table we reviewed at the end of the last section, but this one includes some fields that summarize the short-term performance of the cryptocurrency in the short-term relative to when the data was collected:
-    
-    ![](images/BitgurPerformance.png)
-    
-    + Data collected since:
-    
-    + Row count as of 12/19/2019:
-    
-    
-- **`ScrapeStorm.ShrimpyPrices`**
+#### [**`Bitgur`**](https://predictcryptodb.com/question/6)
+```{r BitgurPreview, echo=F}
+options(scipen=999) #get rid of scientific notation 
 
-    + When using data from a table like the `BitgurPerformance` table just described, that data is aggregared at a global level. Meaning, the Bitgur website connects to a certain number of exchanges, and calculates things like the overall Market Capitalization ($), the 24h volume, etc. When it comes to the price, the website will average things across exchanges to get to the current price, which makes sense, but in my experience this is not as precise as it needs to be in order to programmatically trade on the cryptocurrency markets.
+query <- "SELECT * FROM Bitgur limit 10"
+# this better but takes longer: 
+#query <- "select * from Bitgur where Rank > 0 order by pkDummy desc, rank asc limit 10"
+
+paged_table(dbFetch(dbSendQuery(database_connection, query)))
+```
+- Source: [https://bitgur.com/](https://bitgur.com/)
+
+- Data collected since: 2018-11-11
+
+#### [**`BitgurPerformance`**](https://predictcryptodb.com/question/7)
+```{r BitgurPerformancePreview, echo=F}
+query <- "SELECT * FROM BitgurPerformance limit 10"
+# this better but takes longer: 
+#query <- "select * from BitgurPerformance where Rank > 0 order by pkDummy desc, rank asc limit 10"
+
+paged_table(dbFetch(dbSendQuery(database_connection, query)))
+```
+    
+- This table is very similar to the `Bitgur` table, but this one includes some fields that summarize the short-term performance of the cryptocurrency in the short-term relative to when the data was collected. 
+       
++ The normal `Bitgur` table would have the prices fields, but not information about the performance over the previous 1h, 3h, etc..
+    
++ Source: [https://bitgur.com/performance](https://bitgur.com/performance)
+        
++ Data collected since: 2019-11-05
+
+#### ADD MORE TABLES
+
+### Tables in `ScrapeStorm` db
+    
+#### [**`ScrapeStorm.ShrimpyPrices`**](https://predictcryptodb.com/question/8)
+
+When using data from a table like the `BitgurPerformance`, the data is aggregared at a global level. Meaning, the Bitgur website connects to a certain number of exchanges, and calculates things like the overall Market Capitalization ($), the 24h volume, etc. When it comes to the price, the website will average things across exchanges to get to the current price, which makes sense, but in my experience this is not as precise as it needs to be in order to programmatically trade on the cryptocurrency markets.
     
     + Therefore, a better approach is to collect the prices directly through the individual exchanges. Because I setup my trading system to work through a service called **Shrimpy**, I have been collecting prices for each exchange as reported through the Shrimpy website. This for example would be the page for the KuCoin exchange prices:
+
+```{r ShrimpyPricesPreview, echo=F}
+query <- "SELECT * FROM ScrapeStorm.ShrimpyPrices limit 10"
+# this better but takes longer: 
+#query <- "select * from ScrapeStorm.ShrimpyPrices where Rank > 0 order by pkDummy desc, rank asc limit 10"
+
+paged_table(dbFetch(dbSendQuery(database_connection, query)))
+```
     
-    ![](images/ShrimpyKucoin.png)
+- Source: [https://www.shrimpy.io/exchange](https://www.shrimpy.io/exchange)
+
+    ![Example for the KuCoin exchange](images/ShrimpyKucoin.png)
     
+    
+#### [**`ScrapesStorm.ShrimpyPricesBTC`**](https://predictcryptodb.com/question/9)
 
-- **`ScrapesStorm.ShrimpyPricesBTC`**
+This table is exactly like the previous one `ShrimpyPrices`, but this one shows prices in BTC instead of being in USD
+
+```{r ShrimpyPricesBTCPreview, echo=F}
+query <- "SELECT * FROM ScrapeStorm.ShrimpyPricesBTC limit 10"
+# this better but takes longer: 
+#query <- "select * from ScrapeStorm.ShrimpyPricesBTC where Rank > 0 order by pkDummy desc, rank asc limit 10"
+
+paged_table(dbFetch(dbSendQuery(database_connection, query)))
+```
 
 
+### Number of rows by table
+
+```{r showTablesSummary, echo=F, results='asis'}
+library(knitr)
+
+query <- "SELECT TABLE_SCHEMA as 'Database', TABLE_NAME as 'Table Name', TABLE_ROWS as 'Rows' FROM INFORMATION_SCHEMA.TABLES Where (TABLE_SCHEMA = 'Octoparse' or TABLE_SCHEMA = 'ScrapeStorm') and TABLE_ROWS > 1 and UPDATE_TIME > DATE_SUB(NOW(), INTERVAL 5 DAY) Order by UPDATE_TIME desc"
+
+kable(dbFetch(dbSendQuery(database_connection, query)))
+```
