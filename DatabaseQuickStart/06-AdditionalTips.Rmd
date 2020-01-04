@@ -8,11 +8,19 @@
     + {{variable_name}} creates a variable in this SQL template called "variable_name". Variables can be given types in the side panel, which changes their behavior. All variable types other than "Field Filter" will automatically cause a filter widget to be placed on this question; with Field Filters, this is optional. When this filter widget is filled in, that value replaces the variable in the SQL template.
 
 
-
 ## Embedding anything created on Metabase
 
 
 ## Creating e-mail triggers
+The Metabase environment is setup to allow for e-mail alerts, where you can e-mail out results on a schedule.
+
+- All tables are configured to have e-mail triggers that check the data is still flowing in as expected. If that is not the case, there are queries for each which would produce a result and trigger an alert. 
+
+- At the start of every hour, there is an alert that checks for queries that have been running longer than 20 minutes and e-mails me the SQL statements to kill those queries.
+
+- When creating a table or chart in Metabase, you will have the option in the bottom right of the page to create an e-mail alert by clicking on the button shaped like a bell:
+
+    ![](images/AlertsBell.PNG)
 
 
 ### Pulses
@@ -22,7 +30,10 @@
 
 This section is a bit more *expert level* and I don't really expect anyone to go down this route, but I figured it was worth having a small section on using the Shrimpy software for trading cryptocurrencies by using their Python package. This is a particularly good way to execute trades on the cryptocurrency markets because rather than having to connect to and manage each API individually, you can connect up to 16 exchanges to your Shrimpy account and programmatically trade on every one of them using the same set of functions in Python.
 
-
+- First you would have to import the `shrimpy-python` library. For installation instructions see this [link]()
+```{python shrimpyPythonExample, eval=F}
+import shrimpy-python
+```
 
 
 
