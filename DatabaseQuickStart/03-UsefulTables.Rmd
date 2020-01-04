@@ -40,7 +40,7 @@ Let's start by clicking on the `Browse Data` tab in the top right of the Metabas
 ![](images/MetabaseBrowseData.png)
 
 
-Here, you will see two different options:
+Here, you should see the options `Octoparse` and `ScrapeStorm`:
 
 ![](images/DBSelection.png)
 
