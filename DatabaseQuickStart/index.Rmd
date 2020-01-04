@@ -34,3 +34,4 @@ This is a quick start guide for the [Predict Crypto DataBase](https://predictcry
 
 6. [Additional Tips-](#additional-tips) Some additional notes around using the environment to its full potential. This section goes over things like [pulling the most recent data](#pulling-most-recent-data), [creating dashboards](#creating-dashboards), [embedding anything you create as an iframe within a website or blog post](#embedding-anything-created-on-metabase), [creating e-mail triggers](#creating-e-mail-triggers) and [using a Python package to execute trades](#using-the-shrimpy-python-library).
 
+*You can toggle the sidebar on the left side of the screen by pressing the letter `s` on your keyboard.*

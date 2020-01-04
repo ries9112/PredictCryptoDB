@@ -14,7 +14,7 @@ Let's say you went ahead and trained a predictive model using the data found in 
 Make a note that can't do this between different schemas because the Octoparse one is in UTC and the ScrapeStorm one in local time. Only real effective way I found do to that is through Alteryx tools.
 
 
-## Data Exploration
+## Creating Tables (LOTS OF JUNK!)
 
 Let's explore some of the functionality found in Metabase using the `Bitgur` table results page we got to at the end of the previous section.
 
@@ -91,6 +91,8 @@ Let's explore some of the functionality found in Metabase using the `Bitgur` tab
              
              ![](images/ConditionalFormattingOutput.png)
 
+
+### Creating Visualizations
 
 
 ### Exporting Data

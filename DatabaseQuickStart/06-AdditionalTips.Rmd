@@ -31,12 +31,16 @@ The Metabase environment is setup to allow for e-mail alerts, where you can e-ma
 This section is a bit more *expert level* and I don't really expect anyone to go down this route, but I figured it was worth having a small section on using the Shrimpy software for trading cryptocurrencies by using their Python package. This is a particularly good way to execute trades on the cryptocurrency markets because rather than having to connect to and manage each API individually, you can connect up to 16 exchanges to your Shrimpy account and programmatically trade on every one of them using the same set of functions in Python.
 
 - First you would have to import the `shrimpy-python` library. For installation instructions see this [link]()
-```{python shrimpyPythonExample, eval=F}
-import shrimpy-python
-```
+
+
+<!-- ```{python eval=FALSE} -->
+<!-- import shrimpy-python -->
+<!-- ``` -->
+
 
 
 
 ```{r disconnectDB, echo=F}
 dbDisconnect(database_connection)
 ```
+
