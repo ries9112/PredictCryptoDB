@@ -20,7 +20,7 @@ The Metabase environment is setup to allow for e-mail alerts, where you can e-ma
 
 - When creating a table or chart in Metabase, you will have the option in the bottom right of the page to create an e-mail alert by clicking on the button shaped like a bell:
 
-    ![](images/AlertsBell.PNG)
+    ![](images/AlertsBell.png)
 
 
 ### Pulses

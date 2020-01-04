@@ -7,7 +7,6 @@ library(data.table)
 library(knitr)
 library(rmarkdown)
 library(DT)
-library(reticulate)
 
 ############# SQL CONNECTION ###############
 getSqlConnection <- function(){
