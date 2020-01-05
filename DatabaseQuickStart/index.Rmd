@@ -23,7 +23,7 @@ always_allow_html: yes
 
 This is a quick start guide for the [Predict Crypto DataBase](https://predictcryptodb.com) which should provide the support you need to interact with the database and pull data. Everything you need to know will be outlined in this document and you can use the sidebar on the left (`s` is the hotkey to show/hide it) to review the following sections:
 
-1. [Overview-](#overview) This section.
+1. Overview- This section.
 
 2. [Interacting with the DB-](#interacting-with-the-db) Instructions around accessing the ***Metabase*** environment that will allow you to interact with the database, which is hosted on the website [PredictCryptoDB.com](https://predictcryptodb.com)
 

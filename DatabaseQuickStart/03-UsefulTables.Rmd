@@ -48,9 +48,7 @@ Here, you should see the options `Octoparse` and `ScrapeStorm`:
 
 - Conversely, `ScrapeStorm` is the schema associated with data collected using the *ScrapeStorm* web scraping software.
 
-- You should also see an option for `PredictCryptoPredictions`. This schema does not have much in it today, but over time as I do more predictive modeling it will populate with new tables for new predictive models and is used to simulate model performance before starting to programmatically trade using the predictions. This guide ignores this schema/database for now to focus on the raw data itself, which always comes from `Octoparse` and `ScrapeStorm`.
-
-- Web scraping has its challenges in terms of stability, so I built some additional resilience by using two different tools that work independently of each other and do similar things (and in some cases collect the same data). Although not a perfect solution, having both up and running means we can usually fill the gaps that might arise in each tool respectively.
+- You should also see an option for `PredictCryptoPredictions`. This schema does not have much in it right now, but over time as I do more predictive modeling it will populate with new tables for new predictive models and is used to simulate model performance before starting to programmatically trade using the predictions. This guide ignores this schema/database for now to focus on the raw data itself, which always comes from the databases `Octoparse` and `ScrapeStorm`.
 
     <!-- + The web scrapers that are run through Octoparse run on their servers in the cloud, which are very stable but have had some issues here and there in the past. -->
 
@@ -184,8 +182,6 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 
 #### [**`TechnicalAnalysis`**](https://predictcryptodb.com/question/10)
-This web scraper collects data from the website [Investing.com](https://www.investing.com/crypto/). This website offers free Technical Analysis indicators on traditional markets, and they adapted that for the cryptocurrency markets. In order to get a full summary of the Technical Analysis outlooks, the web scraper needs to iterate through each cryptocurrency individually, and this is one of the few web scrapers that takes too long to run every hour. 
-
 ```{r TechnicalAnalysisPreview, echo=F}
 options(scipen=999) #get rid of scientific notation 
 
@@ -230,7 +226,7 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
     
 - Source: [www.shrimpy.io/exchange](https://www.shrimpy.io/exchange)
 
-    ![Example for the KuCoin exchange](images/ShrimpyKucoin.png)
+    <!-- ![Example for the KuCoin exchange](images/ShrimpyKucoin.png) -->
 
 - Data collected since: 2019-11-16
 
@@ -252,20 +248,20 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 - Documentation: [predictcryptodb.com/reference/databases/4/tables/454](https://predictcryptodb.com/reference/databases/4/tables/454)
 
 
-#### [**`BitgurBackup`**](https://predictcryptodb.com/question/16)
-```{r BitgurBackupBTCPreview, echo=F}
-query <- "SELECT * FROM ScrapeStorm.Bitgur limit 5"
-# this better but takes longer: 
-#query <- "select * from ScrapeStorm.Bitgur order by pkDummy desc limit 5"
+<!-- #### [**`BitgurBackup`**](https://predictcryptodb.com/question/17) -->
+<!-- ```{r BitgurBackupBTCPreview, echo=F} -->
+<!-- query <- "SELECT * FROM ScrapeStorm.BitgurBackup limit 5" -->
+<!-- # this better but takes longer:  -->
+<!-- #query <- "select * from ScrapeStorm.BitgurBackup order by pkDummy desc limit 5" -->
 
-paged_table(dbFetch(dbSendQuery(database_connection, query)))
-```
+<!-- paged_table(dbFetch(dbSendQuery(database_connection, query))) -->
+<!-- ``` -->
 
-- Source: [www.bitgur.com](https://bitgur.com/)
+<!-- - Source: [www.bitgur.com](https://bitgur.com/) -->
 
-- Data collected since: 2019-11-11
+<!-- - Data collected since: 2019-11-11 -->
 
-- Documentation: [predictcryptodb.com/reference/databases/4/tables/576](https://predictcryptodb.com/reference/databases/4/tables/576)
+<!-- - Documentation: [predictcryptodb.com/reference/databases/4/tables/594](https://predictcryptodb.com/reference/databases/4/tables/594) -->
 
 
 ### PredictCryptoPredictions db
@@ -283,10 +279,11 @@ kable(format(tables_summary, big.mark = ",",nsmall = 2))
 
 **Number of rows by table:**
 ```{r showTablesSummary, echo=F, results='asis'}
-query <- "SELECT TABLE_SCHEMA as 'Database', TABLE_NAME as 'Table Name', TABLE_ROWS as 'Rows' FROM INFORMATION_SCHEMA.TABLES Where (TABLE_SCHEMA = 'Octoparse' or TABLE_SCHEMA = 'ScrapeStorm') and TABLE_ROWS > 1 and UPDATE_TIME > DATE_SUB(NOW(), INTERVAL 5 DAY) Order by Rows desc, UPDATE_TIME desc"
+query <- "SELECT TABLE_SCHEMA as 'Database', TABLE_NAME as 'Table Name', TABLE_ROWS as 'Rows' FROM INFORMATION_SCHEMA.TABLES Where (TABLE_SCHEMA = 'Octoparse' or TABLE_SCHEMA = 'ScrapeStorm') and TABLE_ROWS > 1 and UPDATE_TIME > DATE_SUB(NOW(), INTERVAL 5 DAY) and (TABLE_NAME not like 'v2%') and (TABLE_NAME not like 'AYX%')  order by Rows desc, UPDATE_TIME desc"
 
 kable(format(dbFetch(dbSendQuery(database_connection, query)), big.mark = ","))
 ```
 
-
+### Why two web scraping tools?
+Web scraping has its challenges in terms of stability, so I built some additional resilience by using two different tools that work independently of each other and do similar things (and in some cases collect the same data). Although not a perfect solution, having both up and running means we can usually fill the gaps that might arise in each tool respectively.
 

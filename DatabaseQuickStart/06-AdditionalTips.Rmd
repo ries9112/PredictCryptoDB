@@ -8,7 +8,8 @@
     + {{variable_name}} creates a variable in this SQL template called "variable_name". Variables can be given types in the side panel, which changes their behavior. All variable types other than "Field Filter" will automatically cause a filter widget to be placed on this question; with Field Filters, this is optional. When this filter widget is filled in, that value replaces the variable in the SQL template.
 
 
-## Embedding anything created on Metabase
+## Sharing anything created on Metabase
+See [**this section**](#sharing) regarding sharing things that you create in Metabase.
 
 
 ## Creating e-mail triggers
