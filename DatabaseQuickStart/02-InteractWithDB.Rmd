@@ -30,7 +30,7 @@ First, let me clarify on what I mean by *Metabase* and how this all works.
 
     ![](images/MetabaseLogin.jpg)
     
-    + If you are having issues accessing the website, try spelling the url including [***https://***predictcryptodb.com](https://predictcryptodb.com). 
+    + If you are having issues accessing the website, try spelling the url including `https`  [***https://***predictcryptodb.com](https://predictcryptodb.com). 
 
     + Before you can login, you need to configure your account through the e-mail you should have received. If you did not receive the e-mail, check your spam folder first:
 
@@ -44,9 +44,8 @@ First, let me clarify on what I mean by *Metabase* and how this all works.
 
     ![](images/MetabaseDashboard.png)
 
-In the next section we will talk about some good tables to get started on, and getting more comfortable navigating the layout of the website.
 
-
+In the next section we will walk through some useful tables found in the database to get you started
 
 
 

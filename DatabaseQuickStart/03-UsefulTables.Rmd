@@ -178,9 +178,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
 - Source: [www.cointobuy.io](www.cointobuy.io)
 
-- Data collected since: 
+- Data collected since: 2018-11-16
 
-- Documentation: 
+- Documentation: [predictcryptodb.com/reference/databases/2/tables/26](https://predictcryptodb.com/reference/databases/2/tables/26)
 
 
 #### [**`TechnicalAnalysis`**](https://predictcryptodb.com/question/10)
@@ -199,17 +199,27 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 - Data collected since: 2018-11-15
 
-- Documentation: 
+- Documentation: [predictcryptodb.com/reference/databases/2/tables/61](https://predictcryptodb.com/reference/databases/2/tables/61)
 
 
 ### Tables in `ScrapeStorm` db
+
+#### [**`Messari`**](https://predictcryptodb.com/question/15)
+```{r MessariPreview, echo=F}
+query <- "SELECT * FROM ScrapeStorm.Messari limit 5"
+# this better but takes longer: 
+#query <- "select * from ScrapeStorm.Messari where Rank > 0 order by pkDummy desc, rank asc limit 5"
+
+paged_table(dbFetch(dbSendQuery(database_connection, query)))
+```
+    
+- Source: [messari.io/screener/my-screener-5385A1A5](https://messari.io/screener/my-screener-5385A1A5)
+
+- Data collected since: 2019-09-26
+
+- Documentation: [predictcryptodb.com/reference/databases/4/tables/479](https://predictcryptodb.com/reference/databases/4/tables/479)
     
 #### [**`ShrimpyPrices`**](https://predictcryptodb.com/question/8)
-
-- When using data from a table like the `BitgurPerformance`, the data is aggregared at a global level. Meaning, the Bitgur website connects to a certain number of exchanges, and calculates things like the overall Market Capitalization ($), the 24h volume, etc. When it comes to the price, the website will average things across exchanges to get to the current price, which makes sense, but in my experience this is not as precise as it needs to be in order to programmatically trade on the cryptocurrency markets.
-    
-    + Therefore, a better approach is to collect the prices directly through the individual exchanges. Because I setup my trading system to work through a service called **Shrimpy**, I have been collecting prices for each exchange as reported through the Shrimpy website. This for example would be the page for the KuCoin exchange prices:
-
 ```{r ShrimpyPricesPreview, echo=F}
 query <- "SELECT * FROM ScrapeStorm.ShrimpyPrices limit 5"
 # this better but takes longer: 
@@ -222,13 +232,11 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
     ![Example for the KuCoin exchange](images/ShrimpyKucoin.png)
 
-- Data collected since: 
+- Data collected since: 2019-11-16
 
+- Documentation: [predictcryptodb.com/reference/databases/4/tables/467](https://predictcryptodb.com/reference/databases/4/tables/467)
 
 #### [**`ShrimpyPricesBTC`**](https://predictcryptodb.com/question/9)
-
-This table is exactly like the previous one `ShrimpyPrices`, but this one shows prices in BTC instead of being in USD.
-
 ```{r ShrimpyPricesBTCPreview, echo=F}
 #query <- "SELECT * FROM ScrapeStorm.ShrimpyPricesBTC limit 5"
 # this better but takes longer: 
@@ -239,16 +247,31 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 - Source: [www.shrimpy.io/exchange](https://www.shrimpy.io/exchange)
 
-- Data collected since: 
+- Data collected since: 2019-11-16
+
+- Documentation: [predictcryptodb.com/reference/databases/4/tables/454](https://predictcryptodb.com/reference/databases/4/tables/454)
 
 
+#### [**`BitgurBackup`**](https://predictcryptodb.com/question/16)
+```{r BitgurBackupBTCPreview, echo=F}
+query <- "SELECT * FROM ScrapeStorm.Bitgur limit 5"
+# this better but takes longer: 
+#query <- "select * from ScrapeStorm.Bitgur order by pkDummy desc limit 5"
 
-<!-- ### Tables for predictive models -->
-<!-- - For the PredictCrypto project, I have been working on different iterations of the predictive models to predict and trade on the live cryptocurrency markets. For an overview of what this process looks like from start to finish, please see the **Alteryx Use Case** for the project: [https://community.alteryx.com/t5/Alteryx-Use-Cases/Predicting-and-Trading-on-the-Cryptocurrency-Markets-using/ta-p/494058](https://community.alteryx.com/t5/Alteryx-Use-Cases/Predicting-and-Trading-on-the-Cryptocurrency-Markets-using/ta-p/494058) -->
+paged_table(dbFetch(dbSendQuery(database_connection, query)))
+```
 
-<!-- - As I improve things on the predictive modeling side of things, I am going to create different iterations of the model and write out predictions made in real time by the newest models and save those predictions so I can analyze what would have happened by actually trading on them. -->
+- Source: [www.bitgur.com](https://bitgur.com/)
 
-<!-- - Currently   -->
+- Data collected since: 2019-11-11
+
+- Documentation: [predictcryptodb.com/reference/databases/4/tables/576](https://predictcryptodb.com/reference/databases/4/tables/576)
+
+
+### PredictCryptoPredictions db
+- For the PredictCrypto project, I have been working on different iterations of the predictive models to predict and trade on the live cryptocurrency markets. For an overview of what this process looks like from start to finish, please see the **Alteryx Use Case** for the project: [https://community.alteryx.com/t5/Alteryx-Use-Cases/Predicting-and-Trading-on-the-Cryptocurrency-Markets-using/ta-p/494058](https://community.alteryx.com/t5/Alteryx-Use-Cases/Predicting-and-Trading-on-the-Cryptocurrency-Markets-using/ta-p/494058)
+
+- As I improve things on the predictive modeling side of things, I am going to create different iterations of the model and write out predictions made in real time by the newest models and save those predictions so I can analyze what would have happened by actually trading on them. Once I have done more progress I will provide more tools and better documentation around analyzing the performance of the different predictive models.
 
 
 ### Database size info
