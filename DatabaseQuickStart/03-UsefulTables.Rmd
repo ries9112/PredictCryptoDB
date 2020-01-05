@@ -83,6 +83,8 @@ In the next section [Usage Guide](#usage-guide) we will walk through some of the
 
 - Things will tend to live as chr/strings within the database because I found that saving everything as a string prevents schema conflicts from no longer uploading data to the database after it gets collected. The previews below will show you the data types as well, so just keep in mind you might have to change the data types sometimes after extracting the data from the database.
 
+- The data shown below should be no more than 1 day old. The latest data is shown for each table and this document refreshes automatically daily.
+
 ### Tables in `Octoparse` db
 
 
@@ -92,9 +94,11 @@ In the next section [Usage Guide](#usage-guide) we will walk through some of the
 ```{r BitgurPreview, echo=F}
 options(scipen=999) #get rid of scientific notation 
 
-query <- "SELECT * FROM Bitgur limit 5"
+#REMEMBER that if I want to make things faster and have book build take 2 seconds un-comment the first set of queries and comment out the second longer query for all tables
+
+#query <- "SELECT * FROM Bitgur limit 5"
 # this better but takes longer: 
-#query <- "select * from Bitgur where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select distinct * from Bitgur where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
@@ -107,9 +111,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`BitgurPerformance`**](https://predictcryptodb.com/question/7)
 ```{r BitgurPerformancePreview, echo=F}
-query <- "SELECT * FROM BitgurPerformance limit 5"
+#query <- "SELECT * FROM BitgurPerformance limit 5"
 # this better but takes longer: 
-#query <- "select * from BitgurPerformance where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from BitgurPerformance where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
@@ -122,9 +126,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`CoinCheckup`**](https://predictcryptodb.com/question/11)
 ```{r CoinCheckupPreview, echo=F}
-query <- "SELECT * FROM CoinCheckup limit 5"
+#query <- "SELECT * FROM CoinCheckup limit 5"
 # this better but takes longer: 
-#query <- "select * from CoinCheckup where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from CoinCheckup where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
@@ -137,9 +141,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`CoinCheckupDetails`**](https://predictcryptodb.com/question/12)
 ```{r CoinCheckupDetailsPreview, echo=F}
-query <- "SELECT * FROM CoinCheckupDetails limit 5"
+#query <- "SELECT * FROM CoinCheckupDetails limit 5"
 # this better but takes longer: 
-#query <- "select * from CoinCheckupDetails where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from CoinCheckupDetails Where Name > '' order by pkDummy desc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
@@ -153,9 +157,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`CoinStatsPrices`**](https://predictcryptodb.com/question/13)
 ```{r CoinStatsPricesPreview, echo=F, warning=F}
-query <- "SELECT * FROM CoinStatsPrices limit 5"
+#query <- "SELECT * FROM CoinStatsPrices limit 5"
 # this better but takes longer: 
-#query <- "select * from CoinStatsPrices where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from CoinStatsPrices where Rank > 0 and Price > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
@@ -168,9 +172,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`CoinToBuy`**](https://predictcryptodb.com/question/14)
 ```{r CoinToBuyPreview, echo=F}
-query <- "SELECT * FROM CoinToBuy limit 5"
+#query <- "SELECT * FROM CoinToBuy limit 5"
 # this better but takes longer: 
-#query <- "select * from CoinToBuy where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from CoinToBuy where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
@@ -185,9 +189,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```{r TechnicalAnalysisPreview, echo=F}
 options(scipen=999) #get rid of scientific notation 
 
-query <- "SELECT * FROM TechnicalAnalysis limit 5"
+#query <- "SELECT * FROM TechnicalAnalysis limit 5"
 # this better but takes longer: 
-#query <- "select * from TechnicalAnalysis where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from TechnicalAnalysis order by pkDummy desc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
@@ -202,9 +206,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`Messari`**](https://predictcryptodb.com/question/15)
 ```{r MessariPreview, echo=F}
-query <- "SELECT * FROM ScrapeStorm.Messari limit 5"
+#query <- "SELECT * FROM ScrapeStorm.Messari limit 5"
 # this better but takes longer: 
-#query <- "select * from ScrapeStorm.Messari where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from ScrapeStorm.Messari where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
@@ -217,9 +221,9 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
     
 #### [**`ShrimpyPrices`**](https://predictcryptodb.com/question/8)
 ```{r ShrimpyPricesPreview, echo=F}
-query <- "SELECT * FROM ScrapeStorm.ShrimpyPrices limit 5"
+#query <- "SELECT * FROM ScrapeStorm.ShrimpyPrices limit 5"
 # this better but takes longer: 
-#query <- "select * from ScrapeStorm.ShrimpyPrices where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from ScrapeStorm.ShrimpyPrices order by pkDummy desc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
