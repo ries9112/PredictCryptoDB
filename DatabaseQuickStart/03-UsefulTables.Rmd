@@ -98,7 +98,7 @@ options(scipen=999) #get rid of scientific notation
 
 #query <- "SELECT * FROM Bitgur limit 5"
 # this better but takes longer: 
-query <- "select distinct * from Bitgur where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from Bitgur where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
