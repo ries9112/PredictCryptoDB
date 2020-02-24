@@ -1,0 +1,4 @@
+{
+  "message": "DatabaseQuickStart/index.Rmd:12:15: unexpected '['\n11: documentclass: book\n12: bibliography: [\n                  ^",
+  "traceback": []
+}
