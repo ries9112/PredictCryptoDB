@@ -10,7 +10,7 @@ library(DT)
 
 db_user <- "${{ secrets.USER }}"
 db_pswd <- "${{ secrets.PSWD }}"
-db_ip <- "${{ secrets.IP }}"
+#db_ip <- "${{ secrets.IP }}"
 
 ############# SQL CONNECTION ###############
 getSqlConnection <- function(){
@@ -19,7 +19,7 @@ getSqlConnection <- function(){
       RMySQL::MySQL(),
       username = db_user,
       password = db_pswd,
-      host = db_ip,
+      host = 35.188.12.15,
       dbname = 'Octoparse'
     )
   return(con)
