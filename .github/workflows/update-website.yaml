@@ -21,9 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: r-lib/actions/setup-r@master
+      - name: Install pandoc and pandoc citeproc
+        run: |
+          brew install pandoc
+          brew install pandoc-citeproc
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT','webshot','PhantomJS','installr'))
+          install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT','webshot','PhantomJS'))
         shell: Rscript {0}
       - name: refresh book
-        run: Rscript -e "installr::install.pandoc()" -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+        run: Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
