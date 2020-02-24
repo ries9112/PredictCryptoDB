@@ -1,0 +1,73 @@
+# Development Roadmap
+
+## Data Sources
+
+### February 1, 2020
+By this date I will have added the following web scrapers:
+
+1. New web scraper for: [cryptofinance.ai/](https://cryptofinance.ai/)
+
+    - Legally acquire data from CoinMarketCap.com through the service
+
+    <!-- - Remember to pay for the $10 monthly subscription to be able to pull data from CMC without paying for their Pro API which is crazy expensive -->
+    
+    
+2. New web scraper for: [stocktwits.com/symbol/BTC](https://stocktwits.com/symbol/BTC)
+
+    - Extract sentiment scores and change
+    
+    
+3. New web scraper to iterate through list of cryptocurrencies, e.g.: [www.marketwatch.com/investing/cryptocurrency/btcusd](https://www.marketwatch.com/investing/cryptocurrency/btcusd
+
+    - Extract Flipside ratings and change
+    
+
+4. New web scraper to extract news articles to start doing more semantic analysis oriented work: [www.thestreet.com/investing/cryptocurrency](https://www.thestreet.com/investing/cryptocurrency)
+
+
+5. Another new web scraper to extract news articles: [www.marketwatch.com/investing/cryptocurrency](https://www.marketwatch.com/investing/cryptocurrency)
+
+
+### March 1, 2020
+By this date I will have finalized the new process in Alteryx to run the `v3` version of the XGBoost models.
+
+
+### March 15, 2020
+By March 15th, the new `v3` version of the models will be executing trades on the cryptocurrency markets in an automated fashion.
+
+
+
+## Tutorials
+
+### January 25, 2020
+By this date I will make available the first set of programming tutorials on [PredictCrypto.com](https://www.predictcrypto.com/tutorials). These will comprise of:
+
+1. A tutorial on the basics of R. Not crypto oriented but still uses live crypto data.
+
+2. An interactive presentation where the user gets to make selections (like what cryptocurrency to analyze) and based on those selections gets relevant practice problems relating to the content found in the first tutorial about the basics of R.
+
+3. A slightly more advanced (intermediate level) tutorial in R. This tutorial however will take a different approach than the first one and will walk through making predictions on the cryptocurrency markets from start to finish. This tutorial uses the last 7 days of data from whenever the tutorial is launched.
+
+4. Another interactive presentation similar to #2 from earlier, but this time giving practice problems for the more advanced R tutorial.
+
+
+### April 1-April 25, 2020
+This is the only thing that is not related to cryptocurrencies that I am adding to the roadmap ahead. On April 1st 2020 the US will undergo its census, which only happens once every 10 years and will provide one of the best datasets in the world for free. Therefore from April 1st to around the 25th I will plan to **only** be working on creating interactive ways to analyze the census data as well as tutorials associated with the dataset.
+
+
+### June 1, 2020
+By this date I would like to create tutorials using spark and R. Spark can be particularly challenging to learn becuase there's no real good way to practice without connecting to a spark cluster and that can be challenging and expensive. I think I could create a solution that allows people to learn Spark using data from crypto markets the same way I did for the SQL database and it would cost somewhere around $150 a month to maintain. I think that would be worth it, but I need to evaluate that when the time comes. I think this would be one of the more valuable learning tools if created.
+
+
+### August 1, 2020
+Around this date I plan on expanding the technologies taught through the tutorials made available on [PredictCrypto.com](https://www.predictcrypto.com/tutorials) to also include Python, and ideally some Javascript as well.
+
+
+### November 1, 2020
+Around this date ideally I have started working on creating my own blockchain from scratch and have started to work on tutorials that teach about blockchain.
+
+
+### December 1, 2020
+Around the end of the year ideally I could find the time to dive into deeper concepts and providing more digestible tutorials around more complex topics like creating very advanced Neural Networks (like having a neural network that creates the structure of the neural network used to make predictions), NLP, AI, blockchain, etc...
+
+

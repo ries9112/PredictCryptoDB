@@ -1,5 +1,1 @@
-# PredictCryptoDB
-A repository for things relating to the Predict Crypto database
-
-
-Through this repository I will provide the quick start guide to the database, and anything else related to the database.
+This is a guide for the competitor lift ticket prices data collection project managed by the Pricing team within Marketing Analytics
