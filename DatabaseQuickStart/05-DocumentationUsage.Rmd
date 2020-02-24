@@ -20,6 +20,10 @@ Everything you have visibility to within the Metabase environment is documented.
     - You can click into any Table, and from there you can click into any field to easily retrieve the definition of the specific field.
     
         ![](images/FieldDefinitions.png)
+        
+    - You can keep the documentation open as you write your SQL queries:
+    
+        ![](images/DocumentationHelp.png)
 
 ## pkDummy and pkey
 

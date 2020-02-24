@@ -7,7 +7,9 @@ By this date I will have added the following web scrapers:
 
 1. New web scraper for: [cryptofinance.ai/](https://cryptofinance.ai/)
 
-    - Remember to pay for the $10 monthly subscription to be able to pull data from CMC without paying for their Pro API which is crazy expensive
+    - Legally acquire data from CoinMarketCap.com through the service
+
+    <!-- - Remember to pay for the $10 monthly subscription to be able to pull data from CMC without paying for their Pro API which is crazy expensive -->
     
     
 2. New web scraper for: [stocktwits.com/symbol/BTC](https://stocktwits.com/symbol/BTC)
@@ -54,11 +56,18 @@ This is the only thing that is not related to cryptocurrencies that I am adding 
 
 
 ### June 1, 2020
-Around this date I plan on expanding the technologies taught through the tutorials made available on [PredictCrypto.com](https://www.predictcrypto.com/tutorials) to also include Python, and ideally some Javascript as well.
+By this date I would like to create tutorials using spark and R. Spark can be particularly challenging to learn becuase there's no real good way to practice without connecting to a spark cluster and that can be challenging and expensive. I think I could create a solution that allows people to learn Spark using data from crypto markets the same way I did for the SQL database and it would cost somewhere around $150 a month to maintain. I think that would be worth it, but I need to evaluate that when the time comes. I think this would be one of the more valuable learning tools if created.
 
 
 ### August 1, 2020
+Around this date I plan on expanding the technologies taught through the tutorials made available on [PredictCrypto.com](https://www.predictcrypto.com/tutorials) to also include Python, and ideally some Javascript as well.
+
+
+### November 1, 2020
 Around this date ideally I have started working on creating my own blockchain from scratch and have started to work on tutorials that teach about blockchain.
 
+
+### December 1, 2020
+Around the end of the year ideally I could find the time to dive into deeper concepts and providing more digestible tutorials around more complex topics like creating very advanced Neural Networks (like having a neural network that creates the structure of the neural network used to make predictions), NLP, AI, blockchain, etc...
 
 

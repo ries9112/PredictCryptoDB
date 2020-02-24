@@ -18,11 +18,11 @@ Here, you will be given three different options:
 
     + When picking this option, the underlying functionality is similar to what is given on the simple question option, but when doing a custom question the data won't 
 
-3. **Write raw SQL code**
+3. **Native Query**
 
     + If you're comfortable in SQL and you find that the Metabase interface just gets in the way, feel free to write your own raw SQL code by selecting this option. I have limited the Metabase environment to only allow for `SELECT` statements, if you need additional privileges send me an e-mail.
 
-In summary, if you are not familiar with a table and you're looking to explore the data as you filter different values and whatnot, you will probably want to pick the *Simple question*. If you have a specific analysis in mind already (e.g. last 7 days prices for ETH sorted by DateTime), you might get to your answer faster making a *Custom question* so you're waiting less for the data to load. If you are looking to write your own SQL directly instead of using the Metabase environment to help explore the data in a more intuitive way, go ahead and use the *Write raw SQL code option*.
+In summary, if you are not familiar with a table and you're looking to explore the data as you filter different values and whatnot, you will probably want to pick the *Simple question*. If you have a specific analysis in mind already (e.g. last 7 days prices for ETH sorted by DateTime), you might get to your answer faster making a *Custom question* so you're waiting less for the data to load. If you are looking to write your own SQL directly instead of using the Metabase environment to help explore the data in a more intuitive way, go ahead and use the *Native Query* option.
 
 
 ### Exporting Data

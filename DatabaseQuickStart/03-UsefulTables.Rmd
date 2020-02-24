@@ -26,7 +26,7 @@ tables_list <- dbListTables(database_connection)
 
 query <- 'SELECT table_schema "DB name", sum( data_length + index_length ) / 1024 / 1024 "Size in MB", curdate() as Today 
 FROM information_schema.TABLES GROUP BY table_schema 
-ORDER BY `Size in MB` desc limit 2'
+ORDER BY `Size in MB` desc limit 3' #if new schemas increase the limit!
 
 tables_summary <- dbFetch(dbSendQuery(database_connection, query))
 ```
@@ -83,8 +83,10 @@ In the next section [Usage Guide](#usage-guide) we will walk through some of the
 
 - Things will tend to live as chr/strings within the database because I found that saving everything as a string prevents schema conflicts from no longer uploading data to the database after it gets collected. The previews below will show you the data types as well, so just keep in mind you might have to change the data types sometimes after extracting the data from the database.
 
-### Tables in `Octoparse` db
+- The data shown below should be no more than 1 day old. The latest data is shown for each table and this document refreshes automatically daily.
 
+### Tables in `Octoparse` db
+*All date/time fields in the Octoparse database are in [UTC](https://www.google.com/search?q=time+utc)*
 
 #### [**`Bitgur`**](https://predictcryptodb.com/question/6)
 <!-- Bitgur is a website that aggregates cryptocurrency prices and offers tools to analyze the cryptocurrency markets by connecting directly to the API of the different exchanges in a very similar way to the way the most famous website in this space [CoinMarketCap](coinmarketcap.com) does. It's important to note however, that CoinMarketCap connects to 306 exchanges and Bitgur connects to only 56 exchanges (as of 01/01/2020); this results in dramatically different values in terms of volume, but the price and market capitalization would track very closely between the two websites. I don't currently scrape data from CoinMarketCap because they prohibit this type of behavior in their website usage terms in order to sell an extremely expensive API. -->
@@ -92,13 +94,15 @@ In the next section [Usage Guide](#usage-guide) we will walk through some of the
 ```{r BitgurPreview, echo=F}
 options(scipen=999) #get rid of scientific notation 
 
-query <- "SELECT * FROM Bitgur limit 5"
+#REMEMBER that if I want to make things faster and have book build take 2 seconds un-comment the first set of queries and comment out the second longer query for all tables
+
+#query <- "SELECT * FROM Bitgur limit 5"
 # this better but takes longer: 
-#query <- "select * from Bitgur where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from Bitgur where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
-- Source: [www.bitgur.com](https://bitgur.com/)
+<!-- - Source: [www.bitgur.com](https://bitgur.com/) -->
 
 - Data collected since: 2018-11-11
 
@@ -107,13 +111,13 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`BitgurPerformance`**](https://predictcryptodb.com/question/7)
 ```{r BitgurPerformancePreview, echo=F}
-query <- "SELECT * FROM BitgurPerformance limit 5"
+#query <- "SELECT * FROM BitgurPerformance limit 5"
 # this better but takes longer: 
-#query <- "select * from BitgurPerformance where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from BitgurPerformance where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
-- Source: [www.bitgur.com/performance](https://bitgur.com/performance)
+<!-- - Source: [www.bitgur.com/performance](https://bitgur.com/performance) -->
         
 - Data collected since: 2019-11-05
 
@@ -122,13 +126,13 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`CoinCheckup`**](https://predictcryptodb.com/question/11)
 ```{r CoinCheckupPreview, echo=F}
-query <- "SELECT * FROM CoinCheckup limit 5"
+#query <- "SELECT * FROM CoinCheckup limit 5"
 # this better but takes longer: 
-#query <- "select * from CoinCheckup where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from CoinCheckup where Rank > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
-- Source: [www.coincheckup.com](https://coincheckup.com)
+<!-- - Source: [www.coincheckup.com](https://coincheckup.com) -->
 
 - Data collected since: 2018-12-04
 
@@ -137,13 +141,13 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`CoinCheckupDetails`**](https://predictcryptodb.com/question/12)
 ```{r CoinCheckupDetailsPreview, echo=F}
-query <- "SELECT * FROM CoinCheckupDetails limit 5"
+#query <- "SELECT * FROM CoinCheckupDetails limit 5"
 # this better but takes longer: 
-#query <- "select * from CoinCheckupDetails where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from CoinCheckupDetails Where Name > '' order by pkDummy desc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
-- Source: [www.coincheckup.com](https://coincheckup.com/coins/bitcoin/analysis)
+<!-- - Source: [www.coincheckup.com](https://coincheckup.com/coins/bitcoin/analysis) -->
 
 - Data collected since: 2019-10-01
 
@@ -153,13 +157,13 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`CoinStatsPrices`**](https://predictcryptodb.com/question/13)
 ```{r CoinStatsPricesPreview, echo=F, warning=F}
-query <- "SELECT * FROM CoinStatsPrices limit 5"
+#query <- "SELECT * FROM CoinStatsPrices limit 5"
 # this better but takes longer: 
-#query <- "select * from CoinStatsPrices where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from CoinStatsPrices where Rank > 0 and Price > 0 order by pkDummy desc, rank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
-- Source: [www.coinstats.app](https://coinstats.app/)
+<!-- - Source: [www.coinstats.app](https://coinstats.app/) -->
 
 - Data collected since: 2018-11-11
 
@@ -168,13 +172,13 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 #### [**`CoinToBuy`**](https://predictcryptodb.com/question/14)
 ```{r CoinToBuyPreview, echo=F}
-query <- "SELECT * FROM CoinToBuy limit 5"
+#query <- "SELECT * FROM CoinToBuy limit 5"
 # this better but takes longer: 
-#query <- "select * from CoinToBuy where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from CoinToBuy where SafetyRank > 0 order by pkDummy desc, SafetyRank asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
-- Source: [www.cointobuy.io](www.cointobuy.io)
+<!-- - Source: [www.cointobuy.io](www.cointobuy.io) -->
 
 - Data collected since: 2018-11-16
 
@@ -185,13 +189,13 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```{r TechnicalAnalysisPreview, echo=F}
 options(scipen=999) #get rid of scientific notation 
 
-query <- "SELECT * FROM TechnicalAnalysis limit 5"
+#query <- "SELECT * FROM TechnicalAnalysis limit 5"
 # this better but takes longer: 
-#query <- "select * from TechnicalAnalysis where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from TechnicalAnalysis order by pkDummy desc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
-- Source: [www.investing.com/crypto/](https://www.investing.com/crypto/)
+<!-- - Source: [www.investing.com/crypto/](https://www.investing.com/crypto/) -->
 
 - Data collected since: 2018-11-15
 
@@ -199,17 +203,18 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
 
 
 ### Tables in `ScrapeStorm` db
+*Any date/time fields in the ScrapeStorm database are in the MST timezone (Colorado time)*
 
 #### [**`Messari`**](https://predictcryptodb.com/question/15)
 ```{r MessariPreview, echo=F}
-query <- "SELECT * FROM ScrapeStorm.Messari limit 5"
+#query <- "SELECT * FROM ScrapeStorm.Messari limit 5"
 # this better but takes longer: 
-#query <- "select * from ScrapeStorm.Messari where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from ScrapeStorm.Messari where cast(Rank as unsigned) > 0 order by pkDummy desc, cast(Rank as unsigned) asc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
     
-- Source: [messari.io/screener/my-screener-5385A1A5](https://messari.io/screener/my-screener-5385A1A5)
+<!-- - Source: [messari.io/screener/my-screener-5385A1A5](https://messari.io/screener/my-screener-5385A1A5) -->
 
 - Data collected since: 2019-09-26
 
@@ -217,14 +222,14 @@ paged_table(dbFetch(dbSendQuery(database_connection, query)))
     
 #### [**`ShrimpyPrices`**](https://predictcryptodb.com/question/8)
 ```{r ShrimpyPricesPreview, echo=F}
-query <- "SELECT * FROM ScrapeStorm.ShrimpyPrices limit 5"
+#query <- "SELECT * FROM ScrapeStorm.ShrimpyPrices limit 5"
 # this better but takes longer: 
-#query <- "select * from ScrapeStorm.ShrimpyPrices where Rank > 0 order by pkDummy desc, rank asc limit 5"
+query <- "select * from ScrapeStorm.ShrimpyPrices order by pkDummy desc limit 5"
 
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
     
-- Source: [www.shrimpy.io/exchange](https://www.shrimpy.io/exchange)
+<!-- - Source: [www.shrimpy.io/exchange](https://www.shrimpy.io/exchange) -->
 
     <!-- ![Example for the KuCoin exchange](images/ShrimpyKucoin.png) -->
 
@@ -241,7 +246,7 @@ query <- "select * from ScrapeStorm.ShrimpyPricesBTC order by pkDummy desc limit
 paged_table(dbFetch(dbSendQuery(database_connection, query)))
 ```
 
-- Source: [www.shrimpy.io/exchange](https://www.shrimpy.io/exchange)
+<!-- - Source: [www.shrimpy.io/exchange](https://www.shrimpy.io/exchange) -->
 
 - Data collected since: 2019-11-16
 
