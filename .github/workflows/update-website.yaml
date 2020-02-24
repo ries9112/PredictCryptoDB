@@ -12,7 +12,7 @@ jobs:
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT'))
+          install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT','webshot','PhantomJS'))
         shell: Rscript {0}
       - name: refresh book
         run: Rscript -e "bookdown::render_book('DatabaseQuickStart/index.Rmd', 'bookdown::gitbook')"
