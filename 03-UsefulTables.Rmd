@@ -8,7 +8,9 @@ library(knitr)
 library(rmarkdown)
 library(DT)
 
-db_user <- '${{ secrets.USER }}'
+db_user <- "${{ secrets.USER }}"
+db_pswd <- "${{ secrets.PSWD }}"
+db_ip <- "${{ secrets.IP }}"
 
 ############# SQL CONNECTION ###############
 getSqlConnection <- function(){
