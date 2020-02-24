@@ -1,6 +1,4 @@
-on:
-  schedule:
-  - cron: "40 4 * * *"
+on: [push]
     
 name: update-website
 
@@ -31,3 +29,14 @@ jobs:
         shell: Rscript {0}
       - name: refresh book
         run: Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+
+      - name: Install npm
+        uses: actions/setup-node@v1
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npm install netlify-cli -g
+          netlify deploy --prod --dir _book
