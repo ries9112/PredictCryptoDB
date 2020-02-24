@@ -39,6 +39,11 @@ jobs:
           git config --local user.name "ries9112"
           git commit -m "Update book" -a
 
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v2
+        with:
+          token: ${{ secrets.GITHUB_PAT }}
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
