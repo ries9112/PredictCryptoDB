@@ -1,1 +1,1 @@
-This is a guide for the competitor lift ticket prices data collection project managed by the Pricing team within Marketing Analytics
+This is a guide to the shared **Metabase** environment for the predictcrypto.com project. The database is located at predictcryptodb.com
