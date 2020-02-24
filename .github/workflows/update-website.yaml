@@ -1,4 +1,6 @@
-on: [push]
+on:
+  schedule:
+  - cron: "40 4 * * *"
   
 name: update-website
 
