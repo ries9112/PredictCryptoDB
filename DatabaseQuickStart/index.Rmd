@@ -39,5 +39,3 @@ This is a quick start guide for the [Predict Crypto DataBase](https://predictcry
 
 *You can toggle the sidebar on the left side of the screen by pressing the letter `s` on your keyboard.*
 
-
-<iframe src="https://predictcryptodb.com" scrolling= "yes"></iframe>
