@@ -1,6 +1,4 @@
-on:
-  schedule:
-  - cron: "40 4 * * *"
+on: [push]
   
 name: update-website
 
@@ -15,4 +13,4 @@ jobs:
           install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT'))
         shell: Rscript {0}
       - name: refresh book
-        run: Rscript -e "rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')"
+        run: Rscript -e "bookdown::render_book()"
