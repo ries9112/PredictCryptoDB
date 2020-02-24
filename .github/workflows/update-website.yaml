@@ -13,4 +13,4 @@ jobs:
           install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT'))
         shell: Rscript {0}
       - name: refresh book
-        run: Rscript -e "setwd('C:/Users/info/Desktop/CryptoCurrencyResearchWork/PredictCryptoDB/DatabaseQuickStart')" -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+        run: Rscript -e "bookdown::render_book('DatabaseQuickStart/index.Rmd', 'bookdown::gitbook')"
