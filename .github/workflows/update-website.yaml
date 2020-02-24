@@ -33,6 +33,17 @@ jobs:
       - name: Install npm
         uses: actions/setup-node@v1
 
+      - name: Commit files
+        run: |
+          git config --local user.email "ries9112@colorado.edu"
+          git config --local user.name "ries9112"
+          git commit -m "Update book" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_PAT }}
+
       - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
