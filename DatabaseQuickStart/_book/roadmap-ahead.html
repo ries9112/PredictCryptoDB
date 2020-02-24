@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>7 Roadmap ahead | Predict Crypto Database Quick Start Guide</title>
+  <meta name="description" content="This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data as you would like.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="7 Roadmap ahead | Predict Crypto Database Quick Start Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data as you would like." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Roadmap ahead | Predict Crypto Database Quick Start Guide" />
+  
+  <meta name="twitter:description" content="This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data as you would like." />
+  
+
+<meta name="author" content="Ricky Esclapon - riccardo.esclapon@colorado.edu">
+
+
+<meta name="date" content="2020-01-04">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="additional-tips.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Predict Crypto DB Quick-Start Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="2" data-path="interacting-with-the-db.html"><a href="interacting-with-the-db.html"><i class="fa fa-check"></i><b>2</b> Interacting with the DB</a><ul>
+<li class="chapter" data-level="2.1" data-path="interacting-with-the-db.html"><a href="interacting-with-the-db.html#benefits"><i class="fa fa-check"></i><b>2.1</b> Benefits</a></li>
+<li class="chapter" data-level="2.2" data-path="interacting-with-the-db.html"><a href="interacting-with-the-db.html#metabase-explained"><i class="fa fa-check"></i><b>2.2</b> “Metabase” explained</a></li>
+<li class="chapter" data-level="2.3" data-path="interacting-with-the-db.html"><a href="interacting-with-the-db.html#logging-in"><i class="fa fa-check"></i><b>2.3</b> Logging In</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="useful-tables.html"><a href="useful-tables.html"><i class="fa fa-check"></i><b>3</b> Useful Tables</a><ul>
+<li class="chapter" data-level="3.1" data-path="useful-tables.html"><a href="useful-tables.html#browse-data"><i class="fa fa-check"></i><b>3.1</b> Browse Data</a></li>
+<li class="chapter" data-level="3.2" data-path="useful-tables.html"><a href="useful-tables.html#useful-tables-1"><i class="fa fa-check"></i><b>3.2</b> Useful tables</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="useful-tables.html"><a href="useful-tables.html#tables-in-octoparse-db"><i class="fa fa-check"></i><b>3.2.1</b> Tables in <code>Octoparse</code> db</a></li>
+<li class="chapter" data-level="3.2.2" data-path="useful-tables.html"><a href="useful-tables.html#tables-in-scrapestorm-db"><i class="fa fa-check"></i><b>3.2.2</b> Tables in <code>ScrapeStorm</code> db</a></li>
+<li class="chapter" data-level="3.2.3" data-path="useful-tables.html"><a href="useful-tables.html#database-size-info"><i class="fa fa-check"></i><b>3.2.3</b> Database size info</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="usage-guide.html"><a href="usage-guide.html"><i class="fa fa-check"></i><b>4</b> Usage Guide</a><ul>
+<li class="chapter" data-level="4.1" data-path="usage-guide.html"><a href="usage-guide.html#pulling-most-recent-data"><i class="fa fa-check"></i><b>4.1</b> Pulling Most Recent Data</a></li>
+<li class="chapter" data-level="4.2" data-path="usage-guide.html"><a href="usage-guide.html#creating-tables-lots-of-junk"><i class="fa fa-check"></i><b>4.2</b> Creating Tables (LOTS OF JUNK!)</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="usage-guide.html"><a href="usage-guide.html#creating-visualizations"><i class="fa fa-check"></i><b>4.2.1</b> Creating Visualizations</a></li>
+<li class="chapter" data-level="4.2.2" data-path="usage-guide.html"><a href="usage-guide.html#exporting-data"><i class="fa fa-check"></i><b>4.2.2</b> Exporting Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="usage-guide.html"><a href="usage-guide.html#answer-questions"><i class="fa fa-check"></i><b>4.3</b> Answer Questions</a></li>
+<li class="chapter" data-level="4.4" data-path="usage-guide.html"><a href="usage-guide.html#creating-dashboards"><i class="fa fa-check"></i><b>4.4</b> Creating dashboards</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="documentation-usage.html"><a href="documentation-usage.html"><i class="fa fa-check"></i><b>5</b> Documentation Usage</a><ul>
+<li class="chapter" data-level="5.1" data-path="documentation-usage.html"><a href="documentation-usage.html#pkdummy-and-pkey"><i class="fa fa-check"></i><b>5.1</b> pkDummy and pkey</a></li>
+<li class="chapter" data-level="5.2" data-path="documentation-usage.html"><a href="documentation-usage.html#navigating-the-metabase-interface"><i class="fa fa-check"></i><b>5.2</b> Navigating the Metabase interface</a></li>
+<li class="chapter" data-level="5.3" data-path="documentation-usage.html"><a href="documentation-usage.html#using-x-rays-to-explore-a-table"><i class="fa fa-check"></i><b>5.3</b> Using x-rays to explore a table</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="additional-tips.html"><a href="additional-tips.html"><i class="fa fa-check"></i><b>6</b> Additional Tips</a><ul>
+<li class="chapter" data-level="6.1" data-path="additional-tips.html"><a href="additional-tips.html#creating-variables-for-queries"><i class="fa fa-check"></i><b>6.1</b> Creating Variables for queries</a></li>
+<li class="chapter" data-level="6.2" data-path="additional-tips.html"><a href="additional-tips.html#embedding-anything-created-on-metabase"><i class="fa fa-check"></i><b>6.2</b> Embedding anything created on Metabase</a></li>
+<li class="chapter" data-level="6.3" data-path="additional-tips.html"><a href="additional-tips.html#creating-e-mail-triggers"><i class="fa fa-check"></i><b>6.3</b> Creating e-mail triggers</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="additional-tips.html"><a href="additional-tips.html#pulses"><i class="fa fa-check"></i><b>6.3.1</b> Pulses</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="additional-tips.html"><a href="additional-tips.html#using-the-shrimpy-python-library"><i class="fa fa-check"></i><b>6.4</b> Using the Shrimpy-Python Library</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html"><i class="fa fa-check"></i><b>7</b> Roadmap ahead</a><ul>
+<li class="chapter" data-level="7.1" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#data-sources"><i class="fa fa-check"></i><b>7.1</b> Data Sources</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#february-1-2020"><i class="fa fa-check"></i><b>7.1.1</b> February 1, 2020</a></li>
+<li class="chapter" data-level="7.1.2" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#march-1-2020"><i class="fa fa-check"></i><b>7.1.2</b> March 1, 2020</a></li>
+<li class="chapter" data-level="7.1.3" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#march-15-2020"><i class="fa fa-check"></i><b>7.1.3</b> March 15, 2020</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#tutorials"><i class="fa fa-check"></i><b>7.2</b> Tutorials</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#january-25-2020"><i class="fa fa-check"></i><b>7.2.1</b> January 25, 2020</a></li>
+<li class="chapter" data-level="7.2.2" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#april-1-april-25-2020"><i class="fa fa-check"></i><b>7.2.2</b> April 1-April 25, 2020</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#june-1-2020"><i class="fa fa-check"></i><b>7.3</b> June 1, 2020</a></li>
+<li class="chapter" data-level="7.4" data-path="roadmap-ahead.html"><a href="roadmap-ahead.html#august-1-2020"><i class="fa fa-check"></i><b>7.4</b> August 1, 2020</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Predict Crypto Database Quick Start Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="roadmap-ahead" class="section level1">
+<h1><span class="header-section-number">7</span> Roadmap ahead</h1>
+<div id="data-sources" class="section level2">
+<h2><span class="header-section-number">7.1</span> Data Sources</h2>
+<div id="february-1-2020" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> February 1, 2020</h3>
+<p>By this date I will have added the following web scrapers:</p>
+<ol style="list-style-type: decimal">
+<li><p>New web scraper for: <a href="https://cryptofinance.ai/">cryptofinance.ai/</a></p>
+<ul>
+<li>Remember to pay for the $10 monthly subscription to be able to pull data from CMC without paying for their Pro API which is crazy expensive</li>
+</ul></li>
+<li><p>New web scraper for: <a href="https://stocktwits.com/symbol/BTC">stocktwits.com/symbol/BTC</a></p>
+<ul>
+<li>Extract sentiment scores and change</li>
+</ul></li>
+<li><p>New web scraper to iterate through list of cryptocurrencies, e.g.: [www.marketwatch.com/investing/cryptocurrency/btcusd](<a href="https://www.marketwatch.com/investing/cryptocurrency/btcusd" class="uri">https://www.marketwatch.com/investing/cryptocurrency/btcusd</a></p>
+<ul>
+<li>Extract Flipside ratings and change</li>
+</ul></li>
+<li><p>New web scraper to extract news articles to start doing more semantic analysis oriented work: <a href="https://www.thestreet.com/investing/cryptocurrency">www.thestreet.com/investing/cryptocurrency</a></p></li>
+<li><p>Another new web scraper to extract news articles: <a href="https://www.marketwatch.com/investing/cryptocurrency">www.marketwatch.com/investing/cryptocurrency</a></p></li>
+</ol>
+</div>
+<div id="march-1-2020" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> March 1, 2020</h3>
+<p>By this date I will have finalized the new process in Alteryx to run the <code>v3</code> version of the XGBoost models.</p>
+</div>
+<div id="march-15-2020" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> March 15, 2020</h3>
+<p>By March 15th, the new <code>v3</code> version of the models will be executing trades on the cryptocurrency markets in an automated fashion.</p>
+</div>
+</div>
+<div id="tutorials" class="section level2">
+<h2><span class="header-section-number">7.2</span> Tutorials</h2>
+<div id="january-25-2020" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> January 25, 2020</h3>
+<p>By this date I will make available the first set of programming tutorials on <a href="https://www.predictcrypto.com/tutorials">PredictCrypto.com</a>. These will comprise of:</p>
+<ol style="list-style-type: decimal">
+<li><p>A tutorial on the basics of R. Not crypto oriented but still uses live crypto data.</p></li>
+<li><p>An interactive presentation where the user gets to make selections (like what cryptocurrency to analyze) and based on those selections gets relevant practice problems relating to the content found in the first tutorial about the basics of R.</p></li>
+<li><p>A slightly more advanced (intermediate level) tutorial in R. This tutorial however will take a different approach than the first one and will walk through making predictions on the cryptocurrency markets from start to finish. This tutorial uses the last 7 days of data from whenever the tutorial is launched.</p></li>
+<li><p>Another interactive presentation similar to #2 from earlier, but this time giving practice problems for the more advanced R tutorial.</p></li>
+</ol>
+</div>
+<div id="april-1-april-25-2020" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> April 1-April 25, 2020</h3>
+<p>This is the only thing that is not related to cryptocurrencies that I am adding to the roadmap ahead. On April 1st 2020 the US will undergo its census, which only happens once every 10 years and will provide one of the best datasets in the world for free. Therefore from April 1st to around the 25th I will plan to <strong>only</strong> be working on creating interactive ways to analyze the census data as well as tutorials associated with the dataset.</p>
+</div>
+</div>
+<div id="june-1-2020" class="section level2">
+<h2><span class="header-section-number">7.3</span> June 1, 2020</h2>
+<p>Around this date I plan on expanding the technologies taught through the tutorials made available on <a href="https://www.predictcrypto.com/tutorials">PredictCrypto.com</a> to also include Python, and ideally some Javascript as well.</p>
+</div>
+<div id="august-1-2020" class="section level2">
+<h2><span class="header-section-number">7.4</span> August 1, 2020</h2>
+<p>Around this date ideally I have started working on creating my own blockchain from scratch and have started to work on tutorials that teach about blockchain.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="additional-tips.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["WebScrapingGuide.pdf", "WebScrapingGuide.epub"],
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>

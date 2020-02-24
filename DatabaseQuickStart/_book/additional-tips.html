@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>6 Additional Tips | Predict Crypto Database Quick Start Guide</title>
+  <meta name="description" content="This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data as you would like.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="6 Additional Tips | Predict Crypto Database Quick Start Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data as you would like." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Additional Tips | Predict Crypto Database Quick Start Guide" />
+  
+  <meta name="twitter:description" content="This is a quick start guide for the Predict Crypto database which should provide the support you need to interact with the database and pull data as you would like." />
+  
+
+<meta name="author" content="Ricky Esclapon - riccardo.esclapon@colorado.edu">
+
+
+<meta name="date" content="2020-01-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="documentation-usage.html">
+<link rel="next" href="development-roadmap.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Predict Crypto DB Quick-Start Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="2" data-path="interacting-with-the-db.html"><a href="interacting-with-the-db.html"><i class="fa fa-check"></i><b>2</b> Interacting with the DB</a><ul>
+<li class="chapter" data-level="2.1" data-path="interacting-with-the-db.html"><a href="interacting-with-the-db.html#benefits"><i class="fa fa-check"></i><b>2.1</b> Benefits</a></li>
+<li class="chapter" data-level="2.2" data-path="interacting-with-the-db.html"><a href="interacting-with-the-db.html#metabase-explained"><i class="fa fa-check"></i><b>2.2</b> “Metabase” explained</a></li>
+<li class="chapter" data-level="2.3" data-path="interacting-with-the-db.html"><a href="interacting-with-the-db.html#logging-in"><i class="fa fa-check"></i><b>2.3</b> Logging In</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="useful-tables.html"><a href="useful-tables.html"><i class="fa fa-check"></i><b>3</b> Useful Tables</a><ul>
+<li class="chapter" data-level="3.1" data-path="useful-tables.html"><a href="useful-tables.html#browse-data"><i class="fa fa-check"></i><b>3.1</b> Browse Data</a></li>
+<li class="chapter" data-level="3.2" data-path="useful-tables.html"><a href="useful-tables.html#useful-tables-1"><i class="fa fa-check"></i><b>3.2</b> Useful tables</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="useful-tables.html"><a href="useful-tables.html#tables-in-octoparse-db"><i class="fa fa-check"></i><b>3.2.1</b> Tables in <code>Octoparse</code> db</a></li>
+<li class="chapter" data-level="3.2.2" data-path="useful-tables.html"><a href="useful-tables.html#tables-in-scrapestorm-db"><i class="fa fa-check"></i><b>3.2.2</b> Tables in <code>ScrapeStorm</code> db</a></li>
+<li class="chapter" data-level="3.2.3" data-path="useful-tables.html"><a href="useful-tables.html#predictcryptopredictions-db"><i class="fa fa-check"></i><b>3.2.3</b> PredictCryptoPredictions db</a></li>
+<li class="chapter" data-level="3.2.4" data-path="useful-tables.html"><a href="useful-tables.html#database-size-info"><i class="fa fa-check"></i><b>3.2.4</b> Database size info</a></li>
+<li class="chapter" data-level="3.2.5" data-path="useful-tables.html"><a href="useful-tables.html#why-two-web-scraping-tools"><i class="fa fa-check"></i><b>3.2.5</b> Why two web scraping tools?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="usage-guide.html"><a href="usage-guide.html"><i class="fa fa-check"></i><b>4</b> Usage Guide</a><ul>
+<li class="chapter" data-level="4.1" data-path="usage-guide.html"><a href="usage-guide.html#answer-questions"><i class="fa fa-check"></i><b>4.1</b> Answer <em>Questions</em></a><ul>
+<li class="chapter" data-level="4.1.1" data-path="usage-guide.html"><a href="usage-guide.html#exporting-data"><i class="fa fa-check"></i><b>4.1.1</b> Exporting Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="usage-guide.html"><a href="usage-guide.html#pkey-and-pkdummy-fields"><i class="fa fa-check"></i><b>4.2</b> pkey and pkDummy fields</a></li>
+<li class="chapter" data-level="4.3" data-path="usage-guide.html"><a href="usage-guide.html#tabular-data"><i class="fa fa-check"></i><b>4.3</b> Tabular Data</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="usage-guide.html"><a href="usage-guide.html#creating-visualizations"><i class="fa fa-check"></i><b>4.3.1</b> Creating Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="usage-guide.html"><a href="usage-guide.html#creating-dashboards"><i class="fa fa-check"></i><b>4.4</b> Creating dashboards</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="usage-guide.html"><a href="usage-guide.html#example-dashboard"><i class="fa fa-check"></i><b>4.4.1</b> Example dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="usage-guide.html"><a href="usage-guide.html#using-x-rays-to-explore-a-table"><i class="fa fa-check"></i><b>4.5</b> Using x-rays to explore a table</a></li>
+<li class="chapter" data-level="4.6" data-path="usage-guide.html"><a href="usage-guide.html#sharing"><i class="fa fa-check"></i><b>4.6</b> Sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="documentation-usage.html"><a href="documentation-usage.html"><i class="fa fa-check"></i><b>5</b> Documentation Usage</a><ul>
+<li class="chapter" data-level="5.1" data-path="documentation-usage.html"><a href="documentation-usage.html#pkdummy-and-pkey"><i class="fa fa-check"></i><b>5.1</b> pkDummy and pkey</a></li>
+<li class="chapter" data-level="5.2" data-path="documentation-usage.html"><a href="documentation-usage.html#addtional-notes"><i class="fa fa-check"></i><b>5.2</b> Addtional Notes</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="additional-tips.html"><a href="additional-tips.html"><i class="fa fa-check"></i><b>6</b> Additional Tips</a><ul>
+<li class="chapter" data-level="6.1" data-path="additional-tips.html"><a href="additional-tips.html#sharing-anything-created-on-metabase"><i class="fa fa-check"></i><b>6.1</b> Sharing anything created on Metabase</a></li>
+<li class="chapter" data-level="6.2" data-path="additional-tips.html"><a href="additional-tips.html#e-mail-alerts"><i class="fa fa-check"></i><b>6.2</b> E-mail Alerts</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="additional-tips.html"><a href="additional-tips.html#existing-e-mail-alerts"><i class="fa fa-check"></i><b>6.2.1</b> Existing e-mail alerts</a></li>
+<li class="chapter" data-level="6.2.2" data-path="additional-tips.html"><a href="additional-tips.html#creating-e-mail-alerts"><i class="fa fa-check"></i><b>6.2.2</b> Creating e-mail alerts</a></li>
+<li class="chapter" data-level="6.2.3" data-path="additional-tips.html"><a href="additional-tips.html#pulses"><i class="fa fa-check"></i><b>6.2.3</b> Pulses</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="additional-tips.html"><a href="additional-tips.html#creating-variables-for-queries"><i class="fa fa-check"></i><b>6.3</b> Creating Variables for queries</a></li>
+<li class="chapter" data-level="6.4" data-path="additional-tips.html"><a href="additional-tips.html#using-the-shrimpy-python-library"><i class="fa fa-check"></i><b>6.4</b> Using the Shrimpy-Python Library</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="development-roadmap.html"><a href="development-roadmap.html"><i class="fa fa-check"></i><b>7</b> Development Roadmap</a><ul>
+<li class="chapter" data-level="7.1" data-path="development-roadmap.html"><a href="development-roadmap.html#data-sources"><i class="fa fa-check"></i><b>7.1</b> Data Sources</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="development-roadmap.html"><a href="development-roadmap.html#february-1-2020"><i class="fa fa-check"></i><b>7.1.1</b> February 1, 2020</a></li>
+<li class="chapter" data-level="7.1.2" data-path="development-roadmap.html"><a href="development-roadmap.html#march-1-2020"><i class="fa fa-check"></i><b>7.1.2</b> March 1, 2020</a></li>
+<li class="chapter" data-level="7.1.3" data-path="development-roadmap.html"><a href="development-roadmap.html#march-15-2020"><i class="fa fa-check"></i><b>7.1.3</b> March 15, 2020</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="development-roadmap.html"><a href="development-roadmap.html#tutorials"><i class="fa fa-check"></i><b>7.2</b> Tutorials</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="development-roadmap.html"><a href="development-roadmap.html#january-25-2020"><i class="fa fa-check"></i><b>7.2.1</b> January 25, 2020</a></li>
+<li class="chapter" data-level="7.2.2" data-path="development-roadmap.html"><a href="development-roadmap.html#april-1-april-25-2020"><i class="fa fa-check"></i><b>7.2.2</b> April 1-April 25, 2020</a></li>
+<li class="chapter" data-level="7.2.3" data-path="development-roadmap.html"><a href="development-roadmap.html#june-1-2020"><i class="fa fa-check"></i><b>7.2.3</b> June 1, 2020</a></li>
+<li class="chapter" data-level="7.2.4" data-path="development-roadmap.html"><a href="development-roadmap.html#august-1-2020"><i class="fa fa-check"></i><b>7.2.4</b> August 1, 2020</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Predict Crypto Database Quick Start Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="additional-tips" class="section level1">
+<h1><span class="header-section-number">6</span> Additional Tips</h1>
+<p>This section goes over some additional tips around using Metabase.</p>
+<div id="sharing-anything-created-on-metabase" class="section level2">
+<h2><span class="header-section-number">6.1</span> Sharing anything created on Metabase</h2>
+<p>See <a href="usage-guide.html#sharing"><strong>this section</strong></a> regarding sharing things that you create in Metabase.</p>
+</div>
+<div id="e-mail-alerts" class="section level2">
+<h2><span class="header-section-number">6.2</span> E-mail Alerts</h2>
+<p>The Metabase environment is setup to allow for e-mail alerts, where you can e-mail out results on a schedule.</p>
+<div id="existing-e-mail-alerts" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Existing e-mail alerts</h3>
+<p>I have used this feature of the Metabase environment to setup alerts to ensure the data is flowing in as expected into the database.</p>
+<ul>
+<li><p>Every hour a set of quick queries runs to check if any of the data is more outdated than it should be. For tables where the data flows in every hour, it checks that the latest data is not older than one hour. If the latest data is older than one hour, I get an e-mail letting me know for each table individually.</p></li>
+<li><p>At the start of every hour, there is an alert that checks for queries that have been running longer than 20 minutes and e-mails me the SQL statements to kill those queries.</p></li>
+</ul>
+</div>
+<div id="creating-e-mail-alerts" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Creating e-mail alerts</h3>
+<ul>
+<li><p>When creating a table or chart in Metabase, you will have the option in the bottom right of the page to create an e-mail alert by clicking on the button shaped like a bell:</p>
+<p><img src="images/AlertsBell.png" /></p></li>
+<li><p>From here the menu to setup the e-mail alerts should be very straightforward:</p>
+<p><img src="images/AlertsSetup.png" /></p></li>
+<li><p>For more thorough instructions around creating e-mail triggers, review the official Metabase documentation: <a href="https://www.metabase.com/docs/latest/users-guide/15-alerts.html">https://www.metabase.com/docs/latest/users-guide/15-alerts.html</a></p></li>
+</ul>
+</div>
+<div id="pulses" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Pulses</h3>
+<ul>
+<li>Pulses are almost exactly like e-mail alerts, see the official Metabase documentation for details around using pulses: <a href="https://www.metabase.com/docs/latest/users-guide/10-pulses">https://www.metabase.com/docs/latest/users-guide/10-pulses</a></li>
+</ul>
+</div>
+</div>
+<div id="creating-variables-for-queries" class="section level2">
+<h2><span class="header-section-number">6.3</span> Creating Variables for queries</h2>
+<ul>
+<li><p>Within a new question, click on the “x” symbol to open sidebar on the side and learn how to use variables:</p>
+<ul>
+<li>{{variable_name}} creates a variable in this SQL template called “variable_name”. Variables can be given types in the side panel, which changes their behavior. All variable types other than “Field Filter” will automatically cause a filter widget to be placed on this question; with Field Filters, this is optional. When this filter widget is filled in, that value replaces the variable in the SQL template.</li>
+</ul>
+<p><img src="images/Variables.png" /></p></li>
+</ul>
+</div>
+<div id="using-the-shrimpy-python-library" class="section level2">
+<h2><span class="header-section-number">6.4</span> Using the Shrimpy-Python Library</h2>
+<p>This section is a bit more <em>expert level</em> and I don’t really expect anyone to go down this route, but I figured it was worth having a small section on using the Shrimpy software for trading cryptocurrencies by using their Python package. This is a particularly good way to execute trades on the cryptocurrency markets because rather than having to connect to and manage each API individually, you can connect up to 16 exchanges to your Shrimpy account and programmatically trade on every one of them using the same set of functions in Python.</p>
+<ul>
+<li>First you would have to import the <code>shrimpy-python</code> library. For installation instructions see this <a href="">link</a></li>
+</ul>
+<!-- ```{python eval=FALSE} -->
+<!-- import shrimpy-python -->
+<!-- ``` -->
+<pre><code>## Warning: Closing open result sets</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="documentation-usage.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="development-roadmap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["WebScrapingGuide.pdf", "WebScrapingGuide.epub"],
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>
