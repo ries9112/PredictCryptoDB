@@ -9,7 +9,6 @@ library(rmarkdown)
 library(DT)
 
 ############# SQL CONNECTION ###############
-source('login.R')
 getSqlConnection <- function(){
   con <-
     dbConnect(
