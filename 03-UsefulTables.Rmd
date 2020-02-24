@@ -13,9 +13,9 @@ getSqlConnection <- function(){
   con <-
     dbConnect(
       RMySQL::MySQL(),
-      username = "tutorials",
-      password = "WebsiteTutorials",
-      host = "35.188.12.15",
+      username = db_user,
+      password = db_pswd,
+      host = db_ip,
       dbname = 'Octoparse'
     )
   return(con)
