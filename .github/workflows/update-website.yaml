@@ -1,7 +1,5 @@
-on:
-  schedule:
-  - cron: "* 3 * * *"
-  
+on: [push]
+
 name: update-website
 
 jobs:
