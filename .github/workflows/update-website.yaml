@@ -11,7 +11,6 @@ jobs:
       matrix:
         config:
           - {os: macOS-latest, r: '3.6'}
-          - {os: macOS-latest, r: 'devel'}
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       CRAN: ${{ matrix.config.cran }}
@@ -38,11 +37,6 @@ jobs:
           git config --local user.email "ries9112@colorado.edu"
           git config --local user.name "ries9112"
           git commit -m "Update book" -a
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v2
-        with:
-          token: ${{ secrets.GITHUB_PAT }}
 
       - name: Push changes
         uses: ad-m/github-push-action@master
