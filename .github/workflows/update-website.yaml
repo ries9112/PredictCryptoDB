@@ -1,0 +1,18 @@
+on:
+  schedule:
+  - cron: "* 3 * * *"
+  
+name: update-website
+
+jobs:
+  update-website:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: r-lib/actions/setup-r@master
+      - name: Install dependencies
+        run: |
+          install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT'))
+        shell: Rscript {0}
+      - name: refresh book
+        run: Rscript -e "rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')"
