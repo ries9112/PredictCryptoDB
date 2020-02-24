@@ -8,17 +8,13 @@ library(knitr)
 library(rmarkdown)
 library(DT)
 
-db_user <- "${{ secrets.USER }}"
-db_pswd <- "${{ secrets.PSWD }}"
-#db_ip <- "${{ secrets.IP }}"
-
 ############# SQL CONNECTION ###############
 getSqlConnection <- function(){
   con <-
     dbConnect(
       RMySQL::MySQL(),
-      username = db_user,
-      password = db_pswd,
+      username = "tutorials",
+      password = "WebsiteTutorials",
       host = "35.188.12.15",
       dbname = 'Octoparse'
     )
