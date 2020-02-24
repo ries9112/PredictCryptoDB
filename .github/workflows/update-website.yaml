@@ -28,7 +28,7 @@ jobs:
           install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT','webshot','PhantomJS'))
         shell: Rscript {0}
       - name: refresh book
-        run: Rscript -e "db_user <- ${{ secrets.USER }}" -e "db_pswd <- ${{ secrets.PSWD }}" -e "db_ip <- ${{ secrets.IP }}" -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+        run: Rscript -e "db_user <- '${{ secrets.USER }}'" -e "db_pswd <- '${{ secrets.PSWD }}'" -e "db_ip <- '${{ secrets.IP }}'" -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
 
       - name: Install npm
         uses: actions/setup-node@v1
