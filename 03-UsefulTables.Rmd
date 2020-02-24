@@ -8,6 +8,8 @@ library(knitr)
 library(rmarkdown)
 library(DT)
 
+db_user <- '${{ secrets.USER }}'
+
 ############# SQL CONNECTION ###############
 getSqlConnection <- function(){
   con <-
