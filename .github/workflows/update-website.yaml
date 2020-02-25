@@ -1,9 +1,11 @@
-on: [push]
+on:
+  schedule:
+  - cron: "40 4 * * *"
     
-name: update-website-test
+name: update-website
 
 jobs:
-  update-website-test:
+  update-website:
     runs-on: ${{ matrix.config.os }}
 
     strategy:
