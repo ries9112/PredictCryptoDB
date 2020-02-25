@@ -1,9 +1,9 @@
 on: [push]
     
-name: update-website
+name: update-website-test
 
 jobs:
-  update-website:
+  update-website-test:
     runs-on: ${{ matrix.config.os }}
 
     strategy:
