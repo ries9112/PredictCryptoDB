@@ -34,7 +34,7 @@ jobs:
           
           db_pswd <- "${{secrets.PSWD}}"
           
-          bookdown::render_book('index.Rmd', 'bookdown::gitbook')          
+          rmarkdown::render("03-UsefulTables.Rmd")
         shell: Rscript {0}
       - name: Install npm
         uses: actions/setup-node@v1
