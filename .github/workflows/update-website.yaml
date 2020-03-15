@@ -26,7 +26,7 @@ jobs:
           brew install pandoc-citeproc
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMySQL','data.table','knitr','rmarkdown','DT','webshot','PhantomJS'))
+          install.packages(c("remotes", "rcmdcheck", 'bookdown','DBI','RMariaDB','data.table','knitr','rmarkdown','DT','webshot','PhantomJS'))
         shell: Rscript {0}
       - name: Refresh book
         run: |
