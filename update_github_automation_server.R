@@ -12,4 +12,5 @@ system('git config --local user.name "ries9112"')
 system('git commit -m "Update book" -a')
 # Push to GitHub!
 system('git push origin master')
-
+# ^ If this starts failing, run this line again: git config --global credential.helper 'cache --timeout=10000000000',
+#then trigger a new username + pswd challenge to cache credentials again
