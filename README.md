@@ -2,3 +2,4 @@
 
 [This is a guide](https://predictcryptodb-quickstart.com/) to the shared **Metabase** environment for the [predictcrypto](https://www.predictcrypto.org/) project. The database is located [here](https://predictcryptodb.com/)
 adding a line
+adding a line
